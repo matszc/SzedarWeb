@@ -2,15 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08e4705e-aee4-4673-909d-65a7d4f1375d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/layout/NavBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/layout/ResponsiveDrawer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/dialogs/LoginDialog/LoginDialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/dialogs/RegisterDialog/RegisterDialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/FacebookLoginWrapper/myFacebookLogin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Logout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/snacks/snack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/context/appContext.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/NavBar.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +42,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/components/Dialogs" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -66,7 +75,22 @@
       <workItem from="1572700399750" duration="17164000" />
       <workItem from="1572795719593" duration="14000" />
       <workItem from="1572799111914" duration="4000" />
+      <workItem from="1572801889397" duration="10941000" />
+      <workItem from="1573039484208" duration="6232000" />
+      <workItem from="1573049718351" duration="2024000" />
+      <workItem from="1573059030276" duration="13820000" />
+      <workItem from="1573152753626" duration="6031000" />
+      <workItem from="1573322697202" duration="3054000" />
+      <workItem from="1573399546969" duration="5505000" />
     </task>
+    <task id="LOCAL-00001" summary="config layout">
+      <created>1572801962344</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1572801962344</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -84,5 +108,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="config layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="config layout" />
   </component>
 </project>

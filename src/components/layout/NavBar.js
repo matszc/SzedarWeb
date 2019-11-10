@@ -5,7 +5,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core/styles';
-import Button from "@material-ui/core/Button";
+import LoginDialog from "../dialogs/LoginDialog/LoginDialog";
+import RegisterDialog from "../dialogs/RegisterDialog/RegisterDialog";
+import Logout from "./Logout";
 
 const drawerWidth = 240;
 
@@ -32,6 +34,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const NavBar = ({handleDrawerToggle, children}) => {
+    const [user, setUser] = React.useState(JSON.parse(localStorage.getItem('user')));
+
+    const handleUserChange = () => {
+        setUser(JSON.parse(localStorage.getItem('user')));
+    };
     const classes = useStyles();
     return (
             <AppBar position="fixed" className={classes.appBar}>
@@ -45,10 +52,13 @@ export const NavBar = ({handleDrawerToggle, children}) => {
                     >
                         <MenuIcon/>
                     </IconButton>
-                    <Typography className={classes.title} variant="h6" noWrap>
+                    <Typography className={classes.title} variant="h5" noWrap>
                         {children}
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    {user ? <Logout variant='outlined' handleUserChange={handleUserChange}>{user.login}</Logout>
+                        : (<LoginDialog handleUserChange={handleUserChange} variant='contained'>Login</LoginDialog>)}
+                    {user ? null : (<RegisterDialog variant='outlined'>Register</RegisterDialog>)}
+
                 </Toolbar>
             </AppBar>
     )
