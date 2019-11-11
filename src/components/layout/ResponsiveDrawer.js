@@ -12,6 +12,8 @@ import MailIcon from '@material-ui/icons/Mail';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import {NavBar} from "./NavBar";
+import CircularIndeterminate from './spiner/spiner';
+import AppContext from "../../context/appContext";
 
 const drawerWidth = 240;
 
@@ -74,6 +76,12 @@ function ResponsiveDrawer(props) {
 
     return (
         <div className={classes.root}>
+            <AppContext.Consumer>
+                {(context) => (
+                    context.loading? <CircularIndeterminate/>
+                    : null
+                )}
+            </AppContext.Consumer>
             <CssBaseline />
             <NavBar handleDrawerToggle={handleDrawerToggle}>Szedar Tournament</NavBar>
             <nav className={classes.drawer} aria-label="mailbox folders">

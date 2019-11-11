@@ -57,7 +57,7 @@ export const NavBar = ({handleDrawerToggle, children}) => {
                     </Typography>
                     {user ? <Logout variant='outlined' handleUserChange={handleUserChange}>{user.login}</Logout>
                         : (<LoginDialog handleUserChange={handleUserChange} variant='contained'>Login</LoginDialog>)}
-                    {user ? null : (<RegisterDialog variant='outlined'>Register</RegisterDialog>)}
+                    {user ? null : (<RegisterDialog variant='outlined' handleUserChange={handleUserChange}>Register</RegisterDialog>)}
 
                 </Toolbar>
             </AppBar>

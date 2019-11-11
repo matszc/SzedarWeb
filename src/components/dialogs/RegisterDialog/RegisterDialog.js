@@ -8,8 +8,9 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import api from "../../../config";
 import CustomSnackbar from "../../snacks/snack";
+import MyFacebookLogin from "../../layout/FacebookLoginWrapper/myFacebookLogin";
 
-const RegisterDialog = ({children, color, variant}) => {
+const RegisterDialog = ({children, color, variant, handleUserChange}) => {
     const [open, setOpen] = React.useState(false);
     const [snack, setSnack] = React.useState({open: false});
     const [loading, setLoad] = React.useState(false);
@@ -65,6 +66,11 @@ const RegisterDialog = ({children, color, variant}) => {
             </Button>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">Register</DialogTitle>
+                <MyFacebookLogin
+                    showSnack={showSnack}
+                    hideSnack={hideSnack}
+                    handleUserChange={handleUserChange}
+                />
                 <form onSubmit={submitForm}>
                     <DialogContent>
                         <TextField

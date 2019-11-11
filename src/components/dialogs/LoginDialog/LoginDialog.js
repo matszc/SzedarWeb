@@ -45,7 +45,7 @@ const LoginDialog = ({children, color, variant, handleUserChange}) => {
         api.post('/user/login', loginData).then(r => {
             cancelLoading();
             localStorage.setItem('user', JSON.stringify(r.data));
-            showSnack({message: 'User login success', variant: 'success', open: true, onClose: hideSnack})
+            showSnack({message: 'User login success', variant: 'success', open: true, onClose: hideSnack});
             handleUserChange();
         }).catch(r => {
             cancelLoading();
@@ -65,7 +65,11 @@ const LoginDialog = ({children, color, variant, handleUserChange}) => {
             </Button>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">Login</DialogTitle>
-                <MyFacebookLogin/>
+                <MyFacebookLogin
+                    showSnack={showSnack}
+                    hideSnack={hideSnack}
+                    handleUserChange={handleUserChange}
+                />
                 <form onSubmit={submitForm}>
                     <DialogContent>
                         <FormGroup>
