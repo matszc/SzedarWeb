@@ -1,7 +1,5 @@
 import axios from 'axios';
 import React from "react";
-import AppContext from "./context/appContext";
-import LoadingSwitcher from "./components/layout/spiner/loadingSwitcher";
 
 const user = localStorage.getItem('user');
 
@@ -18,12 +16,12 @@ api.interceptors.request.use((config) => {
     return config;
 }, (error) => Promise.reject(error));
 
-/*api.interceptors.response.use(config => {
+api.interceptors.response.use(config => {
     document.querySelector('.Superhidenbuttom').click();
     return config;
 }, (error) => {
     document.querySelector('.Superhidenbuttom').click();
-    Promise.reject(error);
-});*/
+    return Promise.reject(error);
+});
 
 export default api;

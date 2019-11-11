@@ -20,7 +20,7 @@ class App extends React.Component {
             <>
                 <AppContext.Provider value={this.state}>
                     <ResponsiveDrawer/>
-{/*                    <LoadingSwitcher/>*/}
+                    <LoadingSwitcher/>
                 </AppContext.Provider>
             </>
         );

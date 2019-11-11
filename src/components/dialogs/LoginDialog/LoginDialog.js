@@ -48,6 +48,7 @@ const LoginDialog = ({children, color, variant, handleUserChange}) => {
             showSnack({message: 'User login success', variant: 'success', open: true, onClose: hideSnack});
             handleUserChange();
         }).catch(r => {
+            console.log(r);
             cancelLoading();
             showSnack({
                 message: r.response ? r.response.data : 'Server seems to be down',

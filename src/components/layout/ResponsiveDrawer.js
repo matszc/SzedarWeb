@@ -10,7 +10,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import {makeStyles, useTheme} from '@material-ui/core/styles';
 import {NavBar} from "./NavBar";
 import CircularIndeterminate from './spiner/spiner';
 import AppContext from "../../context/appContext";
@@ -85,7 +85,7 @@ function ResponsiveDrawer(props) {
             <CssBaseline />
             <NavBar handleDrawerToggle={handleDrawerToggle}>Szedar Tournament</NavBar>
             <nav className={classes.drawer} aria-label="mailbox folders">
-                {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+                The implementation can be swapped with js to avoid SEO duplication of links.
                 <Hidden smUp implementation="css">
                     <Drawer
                         container={container}

@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08e4705e-aee4-4673-909d-65a7d4f1375d" name="Default Changelist" comment="login and register">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/layout/spiner/loadingSwitcher.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/layout/spiner/spiner.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dialogs/LoginDialog/LoginDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/LoginDialog/LoginDialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/RegisterDialog/RegisterDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/RegisterDialog/RegisterDialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/FacebookLoginWrapper/myFacebookLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/FacebookLoginWrapper/myFacebookLogin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/layout/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/NavBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/layout/ResponsiveDrawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/ResponsiveDrawer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/spiner/loadingSwitcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/spiner/loadingSwitcher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/spiner/spiner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/spiner/spiner.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/appContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/appContext.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="SCSS File" />
         <option value="JavaScript File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -86,6 +84,8 @@
       <workItem from="1573322697202" duration="3054000" />
       <workItem from="1573399546969" duration="18052000" />
       <workItem from="1573459742549" duration="4114000" />
+      <workItem from="1573468845652" duration="4540000" />
+      <workItem from="1573484815297" duration="669000" />
     </task>
     <task id="LOCAL-00001" summary="config layout">
       <created>1572801962344</created>

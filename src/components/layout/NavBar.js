@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const NavBar = ({handleDrawerToggle, children}) => {
+//    const localUser = JSON.parse(localStorage.getItem('user'));
     const [user, setUser] = React.useState(JSON.parse(localStorage.getItem('user')));
 
     const handleUserChange = () => {
@@ -41,25 +42,25 @@ export const NavBar = ({handleDrawerToggle, children}) => {
     };
     const classes = useStyles();
     return (
-            <AppBar position="fixed" className={classes.appBar}>
-                <Toolbar>
-                    <IconButton
-                        color='inherit'
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={handleDrawerToggle}
-                        className={classes.menuButton}
-                    >
-                        <MenuIcon/>
-                    </IconButton>
-                    <Typography className={classes.title} variant="h5" noWrap>
-                        {children}
-                    </Typography>
-                    {user ? <Logout variant='outlined' handleUserChange={handleUserChange}>{user.login}</Logout>
+        <AppBar position="fixed" className={classes.appBar}>
+            <Toolbar>
+                <IconButton
+                    color='inherit'
+                    aria-label="open drawer"
+                    edge="start"
+                    onClick={handleDrawerToggle}
+                    className={classes.menuButton}
+                >
+                    <MenuIcon/>
+                </IconButton>
+                <Typography className={classes.title} variant="h5" noWrap>
+                    {children}
+                </Typography>
+                {user ? <Logout variant='outlined' handleUserChange={handleUserChange}>{user.login}</Logout>
                         : (<LoginDialog handleUserChange={handleUserChange} variant='contained'>Login</LoginDialog>)}
                     {user ? null : (<RegisterDialog variant='outlined' handleUserChange={handleUserChange}>Register</RegisterDialog>)}
 
-                </Toolbar>
-            </AppBar>
+            </Toolbar>
+        </AppBar>
     )
 };
