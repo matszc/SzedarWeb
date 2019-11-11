@@ -1,9 +1,12 @@
 import React from 'react';
+import HomeContent from "../../components/homeContent/HomeContent";
 
 class HomeComponent extends React.Component {
     render() {
         return (
-            <div>HomeWorks</div>
+            <>
+                <HomeContent/>
+            </>
         )
     }
 }
