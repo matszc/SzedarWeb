@@ -1,8 +1,18 @@
 import React from "react";
 
 const AppContext = React.createContext({
-    loading: false,
-    setLoading: () => {}
+    loader: {
+        loading: false,
+        setLoading: () => {
+        }
+    },
+    snack: {
+        message: '',
+        variant: '',
+        open: false,
+        setSnack: () => {
+        }
+    }
 });
 
 export default AppContext;

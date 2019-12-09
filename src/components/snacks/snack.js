@@ -7,6 +7,7 @@ import SnackbarContent from "@material-ui/core/SnackbarContent";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from '@material-ui/icons/Close';
 import Icon from "@material-ui/core/Icon";
+import PropTypes from "prop-types";
 
 const useStyles1 = makeStyles(theme => ({
     success: {
@@ -56,12 +57,12 @@ const CustomSnackContent = ({className, message, onClose, variant, ...props}) =>
         />)
 };
 
-/*CustomSnackContent.propTypes = {
+CustomSnackContent.propTypes = {
     className: PropTypes.string,
-    message: PropTypes.string,
+    message: PropTypes.string.isRequired,
     onClose: PropTypes.func,
-    variant: PropTypes.oneOf(['error', 'info', 'success', 'warning']).isRequired,
-};*/
+    variant: PropTypes.oneOf(['error', 'info', 'success', 'warning', '']).isRequired,
+};
 
 const useStyles2 = makeStyles(theme => ({
     margin: {
@@ -69,11 +70,8 @@ const useStyles2 = makeStyles(theme => ({
     },
 }));
 
-const CustomSnackbar = ({open, variant, message, onClose, ...props}) => {
-    const {close, setClose} = React.useState(open);
+const CustomSnackbar = ({open, variant, message, onClose}) => {
     const classes = makeStyles(useStyles2);
-    const handleClose = () => {
-    };
     return (
         <Snackbar
             anchorOrigin={{
@@ -81,7 +79,7 @@ const CustomSnackbar = ({open, variant, message, onClose, ...props}) => {
                 horizontal: 'right'
             }}
             open={open}
-            autoHideDuration={6000}
+            autoHideDuration={3000}
             onClose={onClose}
         >
             <CustomSnackContent

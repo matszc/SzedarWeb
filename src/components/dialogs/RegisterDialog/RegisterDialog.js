@@ -7,13 +7,13 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import api from "../../../config";
-import CustomSnackbar from "../../snacks/snack";
 import MyFacebookLogin from "../../layout/FacebookLoginWrapper/myFacebookLogin";
+import AppContext from "../../../context/appContext";
 
 const RegisterDialog = ({children, color, variant, handleUserChange}) => {
     const [open, setOpen] = React.useState(false);
-    const [snack, setSnack] = React.useState({open: false});
-    const [loading, setLoad] = React.useState(false);
+
+    const context = React.useContext(AppContext);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -23,20 +23,8 @@ const RegisterDialog = ({children, color, variant, handleUserChange}) => {
         setOpen(false);
     };
 
-    const setLoading = () => setLoad(true);
-
-    const cancelLoading = () => setLoad(false);
-
-    const showSnack = (obj) => {
-        setSnack(obj);
-    };
-    const hideSnack = () => {
-        setSnack({open: false});
-    };
-
     const submitForm = (e) => {
         e.preventDefault();
-        setLoading();
         const payload = {
             Email: e.target[1].value,
             Login: e.target[0].value,
@@ -44,18 +32,11 @@ const RegisterDialog = ({children, color, variant, handleUserChange}) => {
         };
         api.post('/user/register', payload).then(r => {
             console.log(r);
-            showSnack({message: 'User created', variant: 'success', open: true, onClose: hideSnack});
+            context.snack.setSnack('success', 'User created');
             handleClose();
-            cancelLoading();
         })
             .catch(r => {
-                showSnack({
-                    message: r.response ? r.response.data : 'Server seems to be down',
-                    variant: 'error',
-                    open: true,
-                    onClose: hideSnack
-                });
-                cancelLoading();
+                context.snack.setSnack('error', r.response ? r.response.data : 'Server seems to be down');
             });
     };
 
@@ -67,8 +48,6 @@ const RegisterDialog = ({children, color, variant, handleUserChange}) => {
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">Register</DialogTitle>
                 <MyFacebookLogin
-                    showSnack={showSnack}
-                    hideSnack={hideSnack}
                     handleUserChange={handleUserChange}
                 />
                 <form onSubmit={submitForm}>
@@ -103,15 +82,12 @@ const RegisterDialog = ({children, color, variant, handleUserChange}) => {
                         <Button onClick={handleClose} color="primary">
                             Cancel
                         </Button>
-                        <Button type='submit' color="primary" disabled={loading}>
+                        <Button type='submit' color="primary" disabled={context.loader.loading}>
                             Register
                         </Button>
                     </DialogActions>
                 </form>
             </Dialog>
-            <CustomSnackbar
-                {...snack}
-            />
         </div>
     );
 };

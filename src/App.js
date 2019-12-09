@@ -7,16 +7,54 @@ import HomeComponent from "./views/Home/Home";
 import BrowseTournamentsComponent from "./views/BrowseTournaments/BrowseTournaments";
 import CreateTournamentComponent from "./views/CreateTournament/CreateTournament";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
+import CustomSnackbar from "./components/snacks/snack";
+import {Swiss} from "./views/Swiss/Swiss";
 
 class App extends React.Component {
 
     setLoading = loading => {
-        this.setState({loading});
+        this.setState({
+            ...this.state,
+            loader: {
+                ...this.state.loader,
+                loading: loading,
+            }
+        });
+    };
+
+    setSnack = (variant, message) => {
+        this.setState({
+            ...this.state,
+            snack: {
+                ...this.state.snack,
+                variant: variant,
+                message: message,
+                open: true,
+            }
+        });
+    };
+
+    hideSnack = () => {
+        this.setState({
+            ...this.state,
+            snack: {
+                ...this.state.snack,
+                open: false,
+            }
+        })
     };
 
     state = {
-        loading: false,
-        setLoading: this.setLoading,
+        loader: {
+            loading: false,
+            setLoading: this.setLoading,
+        },
+        snack: {
+            message: '',
+            variant: '',
+            open: false,
+            setSnack: this.setSnack,
+        }
     };
 
     render() {
@@ -27,10 +65,15 @@ class App extends React.Component {
                         <ResponsiveDrawer>
                             <Switch>
                                 <Route exact path='/' component={HomeComponent}/>
-                                <Route path='/browse' component={BrowseTournamentsComponent}/>
+                                <Route exact path='/browse' component={BrowseTournamentsComponent}/>
                                 <Route path='/create' component={CreateTournamentComponent}/>
+                                <Route path='/browse/swiss/:id' component={Swiss}/>
                             </Switch>
                         </ResponsiveDrawer>
+                        <CustomSnackbar variant={this.state.snack.variant}
+                                        open={this.state.snack.open}
+                                        message={this.state.snack.message}
+                                        onClose={this.hideSnack}/>
                         <LoadingSwitcher/>
                     </AppContext.Provider>
                 </BrowserRouter>

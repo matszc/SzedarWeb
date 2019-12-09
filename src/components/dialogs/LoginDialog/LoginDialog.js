@@ -9,13 +9,13 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import {FormGroup} from "@material-ui/core";
 import FormControl from "@material-ui/core/FormControl";
 import api from '../../../config'
-import CustomSnackbar from "../../snacks/snack";
 import MyFacebookLogin from "../../layout/FacebookLoginWrapper/myFacebookLogin";
+import AppContext from "../../../context/appContext";
 
 const LoginDialog = ({children, color, variant, handleUserChange}) => {
     const [open, setOpen] = React.useState(false);
-    const [loading, setLoad] = React.useState(false);
-    const [snack, setSnack] = React.useState({open: false});
+
+    const context = React.useContext(AppContext);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -25,37 +25,19 @@ const LoginDialog = ({children, color, variant, handleUserChange}) => {
         setOpen(false);
     };
 
-    const showSnack = (obj) => {
-        setSnack(obj);
-    };
-    const hideSnack = () => {
-        setSnack({open: false});
-    };
-    const setLoading = () => setLoad(true);
-
-    const cancelLoading = () => setLoad(false);
-
     const submitForm = (e) => {
         e.preventDefault();
-        setLoading();
         const loginData = {
             Login: e.target[0].value,
             Password: e.target[1].value,
         };
         api.post('/user/login', loginData).then(r => {
-            cancelLoading();
             localStorage.setItem('user', JSON.stringify(r.data));
-            showSnack({message: 'User login success', variant: 'success', open: true, onClose: hideSnack});
+            context.snack.setSnack('success', 'User login success');
             handleUserChange();
         }).catch(r => {
             console.log(r);
-            cancelLoading();
-            showSnack({
-                message: r.response ? r.response.data : 'Server seems to be down',
-                variant: 'error',
-                open: true,
-                onClose: hideSnack
-            });
+            context.snack.setSnack('error', r.response ? r.response.data : 'Server seems to be down');
         });
     };
 
@@ -67,8 +49,6 @@ const LoginDialog = ({children, color, variant, handleUserChange}) => {
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">Login</DialogTitle>
                 <MyFacebookLogin
-                    showSnack={showSnack}
-                    hideSnack={hideSnack}
                     handleUserChange={handleUserChange}
                 />
                 <form onSubmit={submitForm}>
@@ -102,15 +82,12 @@ const LoginDialog = ({children, color, variant, handleUserChange}) => {
                         <Button onClick={handleClose} color="primary">
                             Cancel
                         </Button>
-                        <Button type='submit' color="primary" disabled={loading}>
+                        <Button type='submit' color="primary" disabled={context.loader.loading}>
                             Login
                         </Button>
                     </DialogActions>
                 </form>
             </Dialog>
-            <CustomSnackbar
-                {...snack}
-            />
         </div>
     );
 };

@@ -2,8 +2,12 @@ import React from 'react';
 import FacebookLogin from 'react-facebook-login';
 import api from '../../../config';
 import PropTypes from 'prop-types';
+import AppContext from "../../../context/appContext";
 
-const MyFacebookLogin = ({onClick, showSnack, hideSnack, handleUserChange}) => {
+const MyFacebookLogin = ({onClick, handleUserChange}) => {
+
+    const context = React.useContext(AppContext);
+
     const responseFacebook = (r) => {
         console.log(r);
         const fbUser = {
@@ -14,9 +18,10 @@ const MyFacebookLogin = ({onClick, showSnack, hideSnack, handleUserChange}) => {
         api.post('/user/loginFb', fbUser)
             .then(r => {
                 localStorage.setItem('user', JSON.stringify(r.data));
+                context.snack.setSnack('success', 'User login success');
                 handleUserChange();
             })
-            .catch(r => showSnack({message: 'User login success', variant: 'success', open: true, onClose: hideSnack}));
+            .catch(r => context.snack.setSnack('error', 'User login error'));
     };
     return (
         <FacebookLogin
@@ -30,8 +35,6 @@ const MyFacebookLogin = ({onClick, showSnack, hideSnack, handleUserChange}) => {
 
 MyFacebookLogin.propTypes = {
     onClick: PropTypes.func,
-    showSnack: PropTypes.func.isRequired,
-    hideSnack: PropTypes.func.isRequired,
     handleUserChange: PropTypes.func.isRequired,
 
 };

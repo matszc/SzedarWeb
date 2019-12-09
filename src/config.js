@@ -1,18 +1,19 @@
 import axios from 'axios';
-import React from "react";
-
-const user = localStorage.getItem('user');
 
 export const api = axios.create({
     baseURL: 'https://localhost:5001/api',
     headers:{
-        Authorization: `Bearer ${user ? user.token : ''}`,
         'Content-Type': 'application/json',
     },
 });
 
 api.interceptors.request.use((config) => {
     document.querySelector('.Superhidenbuttom').click();
+    const user = JSON.parse(localStorage.getItem('user'));
+    config.headers = {
+        ...config.headers,
+        Authorization: `Bearer ${user ? user.token : ''}`,
+    };
     return config;
 }, (error) => Promise.reject(error));
 
