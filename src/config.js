@@ -8,6 +8,7 @@ export const api = axios.create({
 });
 
 api.interceptors.request.use((config) => {
+
     document.querySelector('.Superhidenbuttom').click();
     const user = JSON.parse(localStorage.getItem('user'));
     config.headers = {
@@ -24,5 +25,38 @@ api.interceptors.response.use(config => {
     document.querySelector('.Superhidenbuttom').click();
     return Promise.reject(error);
 });
+
+export const tournamentTypes = (type) => {
+    switch (type) {
+        case 0: {
+            type = 'DoubleElimination';
+            break;
+        }
+        case 1: {
+            type = 'SingleElimination';
+            break;
+        }
+        case 2: {
+            type = 'Swiss';
+            break;
+        }
+        case 'DoubleElimination': {
+            type = 0;
+            break;
+        }
+        case 'SingleElimination': {
+            type = 1;
+            break;
+        }
+        case 'Swiss': {
+            type = 2;
+            break;
+        }
+        default: {
+        }
+    }
+    return type;
+};
+
 
 export default api;

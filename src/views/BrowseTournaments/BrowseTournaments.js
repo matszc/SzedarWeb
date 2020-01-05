@@ -1,10 +1,22 @@
 import React from "react";
-import api from '../../config';
-import CardHeader from "@material-ui/core/CardHeader";
-import Card from "@material-ui/core/Card";
-import Container from "@material-ui/core/Container";
-import CardContent from "@material-ui/core/CardContent";
-import TournamentList from "../../components/tables/TournamentList";
+import {api, tournamentTypes} from '../../config';
+import SzedarTable from "../../components/tables/SzedarTable";
+import WrapperCard from "../../components/cards/wrapperCard";
+import moment from "moment";
+
+const columns = [{
+    id: 'name',
+    label: 'Name',
+    format: value => value.toLocaleString(),
+}, {
+    id: 'type',
+    label: 'Type',
+    format: value => value.toLocaleString(),
+}, {
+    id: 'creationDate',
+    label: 'Creation date',
+    format: value => value.toLocaleString(),
+}];
 
 class BrowseTournamentsComponent extends React.Component {
 
@@ -18,31 +30,30 @@ class BrowseTournamentsComponent extends React.Component {
 
     componentDidMount() {
         api.get('/tournament/GetAll').then(r => {
-            console.log(r.data);
+            const tournamentList = r.data.map(t => ({
+                ...t,
+                creationDate: moment(t.creationDate).format('DD-MM-YYYY HH:mm'),
+                type: tournamentTypes(t.type),
+            }));
             this.setState((prevState) => ({
                 ...prevState,
-                tournamentList: r.data,
+                tournamentList: tournamentList,
             }));
         })
     }
 
-    rowClick = (id) => {
+    rowClick = ({id, type}) => {
         //TODO sprawdzanie typów turnieju
-        console.log(id);
+
         this.props.history.push(`browse/swiss/${id}`);
     };
 
     render() {
         return (
             <>
-                <Container maxWidth={'md'}>
-                    <Card>
-                        <CardHeader title={'Browse your tournaments'}/>
-                        <CardContent>
-                            <TournamentList data={this.state.tournamentList} rowClick={this.rowClick}/>
-                        </CardContent>
-                    </Card>
-                </Container>
+                <WrapperCard maxWidth={'md'} title={'Browse your tournaments'}>
+                    <SzedarTable data={this.state.tournamentList} rowClick={this.rowClick} columns={columns} paginator/>
+                </WrapperCard>
             </>
         )
     }

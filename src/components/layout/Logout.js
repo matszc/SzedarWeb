@@ -6,6 +6,8 @@ const Logout = ({children, handleUserChange, color, variant}) => {
     const handleLogout = () => {
         localStorage.removeItem('user');
         handleUserChange();
+
+        //TODO redirect to home
     };
     return (
         <>

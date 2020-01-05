@@ -90,7 +90,7 @@ function ResponsiveDrawer(props) {
         <div className={classes.root}>
             <AppContext.Consumer>
                 {(context) => (
-                    context.loading ? <CircularIndeterminate/>
+                    context.loader.loading ? <CircularIndeterminate/>
                         : null
                 )}
             </AppContext.Consumer>

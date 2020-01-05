@@ -65,8 +65,9 @@ export class AddTournamentForm extends React.Component {
     }
 
     handlePlayerChange(e, index) {
-        this.state.players[index] = e.target.value;
-        this.setState({players: this.state.players});
+        const playerList = [...this.state.players];
+        playerList[index] = e.target.value;
+        this.setState({players: playerList});
     }
 
     handleTypeChange(e) {
@@ -114,9 +115,10 @@ export class AddTournamentForm extends React.Component {
                             <InputLabel id='rounds'>Number of rounds</InputLabel>
                             <Select labelId='rounds' value={this.state.swissRounds}
                                     onChange={this.handleSwissRoundsChange}>
-                                {this.state.players.filter((i, index) => index !== 0).map((i, index) => (
-                                    <MenuItem key={index} value={index + 1}>{index + 1}</MenuItem>
-                                ))}
+                                {this.state.players.filter(i => i !== '').length > 1 ? this.state.players.filter((i, index) => i !== '' && index !== 0)
+                                    .map((i, index) => (
+                                        <MenuItem key={index} value={index + 1}>{index + 1}</MenuItem>
+                                    )) : <MenuItem value={1}>1</MenuItem>}
                             </Select>
                         </FormControl>
                     )}

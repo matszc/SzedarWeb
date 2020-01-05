@@ -12,6 +12,12 @@ const AppContext = React.createContext({
         open: false,
         setSnack: () => {
         }
+    },
+    user: {
+        id: '',
+        login: '',
+        setUser: () => {
+        }
     }
 });
 

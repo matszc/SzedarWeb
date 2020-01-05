@@ -7,6 +7,7 @@ import Paper from "@material-ui/core/Paper";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 import TablePagination from "@material-ui/core/TablePagination";
+import PropTypes, {object} from "prop-types";
 
 const useStyles = makeStyles({
     root: {
@@ -18,22 +19,8 @@ const useStyles = makeStyles({
     },
 });
 
-const columns = [{
-    id: 'name',
-    label: 'Name',
-    format: value => value.toLocaleString(),
-}, {
-    id: 'type',
-    label: 'Type',
-    format: value => value.toLocaleString(),
-}, {
-    id: 'creationDate',
-    label: 'Creation date',
-    format: value => value.toLocaleString(),
-}];
 
-
-const TournamentList = ({data, rowClick}) => {
+const SzedarTable = ({data, rowClick, columns, paginator}) => {
 
     const classes = useStyles();
     const [page, setPage] = React.useState(0);
@@ -73,7 +60,7 @@ const TournamentList = ({data, rowClick}) => {
                                         role={'checkbox'}
                                         tabIndex={-1}
                                         key={row.id}
-                                        onClick={() => rowClick(row.id)}
+                                        onClick={() => rowClick(row)}
                                     >
                                         {columns.map(column => {
                                             const value = row[column.id];
@@ -91,18 +78,36 @@ const TournamentList = ({data, rowClick}) => {
                         </TableBody>
                     </Table>
                 </div>
-                <TablePagination
-                    rowsPerPageOptions={[10, 25, 100]}
-                    component="div"
-                    count={data.length}
-                    rowsPerPage={rowsPerPage}
-                    page={page}
-                    onChangePage={handleChangePage}
-                    onChangeRowsPerPage={handleChangeRowsPerPage}
-                />
+                {paginator ?
+                    <TablePagination
+                        rowsPerPageOptions={[10, 25, 100]}
+                        component="div"
+                        count={data.length}
+                        rowsPerPage={rowsPerPage}
+                        page={page}
+                        onChangePage={handleChangePage}
+                        onChangeRowsPerPage={handleChangeRowsPerPage}
+                    /> : null
+                }
             </Paper>
         </>
     )
 };
 
-export default TournamentList
+SzedarTable.propTypes = {
+    data: PropTypes.arrayOf(object).isRequired,
+    columns: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string,
+        label: PropTypes.string,
+        format: PropTypes.func,
+    })).isRequired,
+    rowClick: PropTypes.func,
+    paginator: PropTypes.bool,
+};
+
+SzedarTable.defaultProps = {
+    rowClick: () => {
+    }
+};
+
+export default SzedarTable

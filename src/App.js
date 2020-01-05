@@ -34,6 +34,16 @@ class App extends React.Component {
         });
     };
 
+    setUser = (id, login) => {
+        this.setState({
+            ...this.state,
+            user: {
+                id: id,
+                login: login,
+            }
+        })
+    };
+
     hideSnack = () => {
         this.setState({
             ...this.state,
@@ -54,6 +64,11 @@ class App extends React.Component {
             variant: '',
             open: false,
             setSnack: this.setSnack,
+        },
+        user: {
+            id: '',
+            login: '',
+            setUser: this.setUser,
         }
     };
 
