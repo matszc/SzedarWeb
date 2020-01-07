@@ -9,6 +9,7 @@ import CreateTournamentComponent from "./views/CreateTournament/CreateTournament
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import CustomSnackbar from "./components/snacks/snack";
 import {Swiss} from "./views/Swiss/Swiss";
+import {SingleElimination} from "./views/SingleElimination/SingleElimination";
 
 class App extends React.Component {
 
@@ -83,6 +84,7 @@ class App extends React.Component {
                                 <Route exact path='/browse' component={BrowseTournamentsComponent}/>
                                 <Route path='/create' component={CreateTournamentComponent}/>
                                 <Route path='/browse/swiss/:id' component={Swiss}/>
+                                <Route path='/browse/single/:id' component={SingleElimination}/>
                             </Switch>
                         </ResponsiveDrawer>
                         <CustomSnackbar variant={this.state.snack.variant}

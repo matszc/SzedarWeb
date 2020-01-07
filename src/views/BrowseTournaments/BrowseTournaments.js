@@ -43,9 +43,23 @@ class BrowseTournamentsComponent extends React.Component {
     }
 
     rowClick = ({id, type}) => {
-        //TODO sprawdzanie typów turnieju
+        switch (type) {
+            case 'Swiss': {
+                this.props.history.push(`browse/swiss/${id}`);
+                break;
+            }
+            case 'SingleElimination': {
+                this.props.history.push(`browse/single/${id}`);
+                break;
+            }
+            case 'DoubleElimination': {
+                this.props.history.push(`browse/double/${id}`);
+                break;
+            }
+            default: {
 
-        this.props.history.push(`browse/swiss/${id}`);
+            }
+        }
     };
 
     render() {
