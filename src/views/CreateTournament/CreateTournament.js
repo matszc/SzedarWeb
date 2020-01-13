@@ -9,14 +9,17 @@ const CreateTournamentComponent = ({history}) => {
     const context = React.useContext(AppContext);
 
     const submitTournament = (tournament) => {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user === undefined) {
+            context.snack.setSnack('warning', 'You need to register first');
+            return;
+        }
         tournament.Players = tournament.Players.filter(i => i !== '');
         api.post('/tournament/create', tournament)
             .then(() => {
-                context.snack.setSnack('success', 'Tournament Created');
                 history.push('../browse');
-                //TODO snack if you;re not sign in
             })
-            .catch(r => console.log(r));
+            .catch(() => context.snack.setSnack('error', 'Could not create tournament'));
     };
     return (
         <>

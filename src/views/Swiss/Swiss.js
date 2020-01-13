@@ -54,10 +54,7 @@ export class Swiss extends React.Component {
                 numberOfRounds: roundArray,
                 ownerId: r.data.ownerId,
             }));
-        }).catch((r) => {
-            //TODO show snack on error
-            console.error(r.data)
-        })
+        });
     };
 
     handleTabChange = (e, newValue) => {

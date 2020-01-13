@@ -39,6 +39,7 @@ class App extends React.Component {
         this.setState({
             ...this.state,
             user: {
+                ...this.state.user,
                 id: id,
                 login: login,
             }

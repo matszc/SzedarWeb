@@ -19,9 +19,10 @@ const MyFacebookLogin = ({onClick, handleUserChange}) => {
             .then(r => {
                 localStorage.setItem('user', JSON.stringify(r.data));
                 context.snack.setSnack('success', 'User login success');
+                context.user.setUser(r.data.id, r.data.login);
                 handleUserChange();
             })
-            .catch(r => context.snack.setSnack('error', 'User login error'));
+            .catch(() => context.snack.setSnack('error', 'User login error'));
     };
     return (
         <FacebookLogin

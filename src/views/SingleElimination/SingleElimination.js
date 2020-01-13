@@ -1,9 +1,14 @@
 import * as React from "react";
 import api from "../../config";
+import Bracket from "../../components/bracket/bracket";
+import style from '../../components/bracket/bracket.module.scss';
 
 export class SingleElimination extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            rawData: undefined,
+        }
     }
 
     componentDidMount() {
@@ -11,16 +16,25 @@ export class SingleElimination extends React.Component {
     }
 
     loadData = () => {
-        api.get(`/singleElimination/${this.props.match.params.id}`).then(r => {
-            console.log(r.data);
+        api.get(`/singleElimination/flat/${this.props.match.params.id}`).then(({data}) => {
+            console.log(data);
+            this.setState(prevState => ({
+                ...prevState,
+                rawData: data,
+            }))
         })
     };
 
     render() {
         return (
-            <div>
+            <>
+                {this.state.rawData ?
+                    <div className={style.container}>
+                        <Bracket data={this.state.rawData}>
 
-            </div>
+                        </Bracket>
+                    </div> : null}
+            </>
         )
     }
 }

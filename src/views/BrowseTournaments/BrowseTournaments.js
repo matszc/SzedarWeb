@@ -3,6 +3,7 @@ import {api, tournamentTypes} from '../../config';
 import SzedarTable from "../../components/tables/SzedarTable";
 import WrapperCard from "../../components/cards/wrapperCard";
 import moment from "moment";
+import AppContext from "../../context/appContext";
 
 const columns = [{
     id: 'name',
@@ -19,6 +20,8 @@ const columns = [{
 }];
 
 class BrowseTournamentsComponent extends React.Component {
+
+    static contextType = AppContext;
 
     constructor(props) {
         super(props);
@@ -40,6 +43,9 @@ class BrowseTournamentsComponent extends React.Component {
                 tournamentList: tournamentList,
             }));
         })
+            .catch(() => {
+                this.context.snack.setSnack('error', 'You need to create account first');
+            })
     }
 
     rowClick = ({id, type}) => {
