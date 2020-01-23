@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08e4705e-aee4-4673-909d-65a7d4f1375d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/bracket/bracket.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/bracket/bracket.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/bracket/game.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/bracket/treeConfig.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/DoubleElimination/DoubleElimination.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/LoginDialog/LoginDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/LoginDialog/LoginDialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/FacebookLoginWrapper/myFacebookLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/FacebookLoginWrapper/myFacebookLogin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Logout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/BrowseTournaments/BrowseTournaments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/BrowseTournaments/BrowseTournaments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/CreateTournament/CreateTournament.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/CreateTournament/CreateTournament.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/bracket/bracket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bracket/bracket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/bracket/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bracket/game.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/SingleElimination/SingleElimination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SingleElimination/SingleElimination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Swiss/Swiss.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Swiss/Swiss.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="SCSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -136,7 +128,16 @@
       <workItem from="1578836076539" duration="4460000" />
       <workItem from="1578852577484" duration="15895000" />
       <workItem from="1578912204016" duration="530000" />
-      <workItem from="1578947964550" duration="1234000" />
+      <workItem from="1578947964550" duration="1356000" />
+      <workItem from="1579002830537" duration="1163000" />
+      <workItem from="1579086636849" duration="103000" />
+      <workItem from="1579087097368" duration="5214000" />
+      <workItem from="1579100463067" duration="1534000" />
+      <workItem from="1579444102348" duration="2176000" />
+      <workItem from="1579607819309" duration="682000" />
+      <workItem from="1579610963751" duration="630000" />
+      <workItem from="1579701227950" duration="1798000" />
+      <workItem from="1579783606136" duration="538000" />
     </task>
     <task id="LOCAL-00001" summary="config layout">
       <created>1572801962344</created>
@@ -180,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578402871425</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="create single elimination tree">
+      <created>1578951730352</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1578951730352</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,79 +214,96 @@
     <MESSAGE value="tournament view" />
     <MESSAGE value="finish swiss tournament" />
     <MESSAGE value="prepare single elimination view" />
-    <option name="LAST_COMMIT_MESSAGE" value="prepare single elimination view" />
+    <MESSAGE value="create single elimination tree" />
+    <option name="LAST_COMMIT_MESSAGE" value="create single elimination tree" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="491" y="8" key="CommitChangelistDialog2" timestamp="1578951702869">
+    <state x="491" y="8" key="CommitChangelistDialog2" timestamp="1578951729300">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="393" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1578402870586" />
-    <state x="491" y="8" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1578951702869" />
-    <state width="1899" height="348" key="GridCell.Tab.0.bottom" timestamp="1577053878790">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="491" y="8" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1578951729300" />
+    <state width="1515" height="261" key="GridCell.Tab.0.bottom" timestamp="1579086665347">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1515" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579086665347" />
     <state width="1899" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1577053878790" />
-    <state width="1899" height="348" key="GridCell.Tab.0.center" timestamp="1577053878790">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1515" height="261" key="GridCell.Tab.0.center" timestamp="1579086665346">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1515" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1579086665346" />
     <state width="1899" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1577053878790" />
-    <state width="1899" height="348" key="GridCell.Tab.0.left" timestamp="1577053878790">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1515" height="261" key="GridCell.Tab.0.left" timestamp="1579086665346">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1515" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1579086665346" />
     <state width="1899" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1577053878790" />
-    <state width="1899" height="348" key="GridCell.Tab.0.right" timestamp="1577053878790">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1515" height="261" key="GridCell.Tab.0.right" timestamp="1579086665346">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1515" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1579086665346" />
     <state width="1899" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1577053878790" />
-    <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1577053878790">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1579086665347">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1515" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579086665347" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1577053878790" />
-    <state width="1899" height="348" key="GridCell.Tab.1.center" timestamp="1577053878790">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1515" height="261" key="GridCell.Tab.1.center" timestamp="1579086665347">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1515" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1579086665347" />
     <state width="1899" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1577053878790" />
-    <state width="1899" height="348" key="GridCell.Tab.1.left" timestamp="1577053878790">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1515" height="261" key="GridCell.Tab.1.left" timestamp="1579086665347">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1515" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1579086665347" />
     <state width="1899" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1577053878790" />
-    <state width="1899" height="348" key="GridCell.Tab.1.right" timestamp="1577053878790">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1515" height="261" key="GridCell.Tab.1.right" timestamp="1579086665347">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1579086665347" />
     <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1577053878790" />
-    <state width="1899" height="348" key="GridCell.Tab.2.bottom" timestamp="1577053878791">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1515" height="261" key="GridCell.Tab.2.bottom" timestamp="1579086665347">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1515" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579086665347" />
     <state width="1899" height="348" key="GridCell.Tab.2.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1577053878791" />
-    <state width="1899" height="348" key="GridCell.Tab.2.center" timestamp="1577053878791">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1515" height="261" key="GridCell.Tab.2.center" timestamp="1579086665347">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1515" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1579086665347" />
     <state width="1899" height="348" key="GridCell.Tab.2.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1577053878791" />
-    <state width="1899" height="348" key="GridCell.Tab.2.left" timestamp="1577053878790">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1515" height="261" key="GridCell.Tab.2.left" timestamp="1579086665347">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1515" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1579086665347" />
     <state width="1899" height="348" key="GridCell.Tab.2.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1577053878790" />
-    <state width="1899" height="348" key="GridCell.Tab.2.right" timestamp="1577053878791">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1515" height="261" key="GridCell.Tab.2.right" timestamp="1579086665347">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1515" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1579086665347" />
     <state width="1899" height="348" key="GridCell.Tab.2.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1577053878791" />
-    <state width="1899" height="348" key="GridCell.Tab.3.bottom" timestamp="1577053878791">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1515" height="261" key="GridCell.Tab.3.bottom" timestamp="1579086665347">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1515" height="261" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579086665347" />
     <state width="1899" height="348" key="GridCell.Tab.3.bottom/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1577053878791" />
-    <state width="1899" height="348" key="GridCell.Tab.3.center" timestamp="1577053878791">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1515" height="261" key="GridCell.Tab.3.center" timestamp="1579086665347">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1515" height="261" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1579086665347" />
     <state width="1899" height="348" key="GridCell.Tab.3.center/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1577053878791" />
-    <state width="1899" height="348" key="GridCell.Tab.3.left" timestamp="1577053878791">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1515" height="261" key="GridCell.Tab.3.left" timestamp="1579086665347">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1515" height="261" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1579086665347" />
     <state width="1899" height="348" key="GridCell.Tab.3.left/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1577053878791" />
-    <state width="1899" height="348" key="GridCell.Tab.3.right" timestamp="1577053878791">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1515" height="261" key="GridCell.Tab.3.right" timestamp="1579086665347">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1515" height="261" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1579086665347" />
     <state width="1899" height="348" key="GridCell.Tab.3.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1577053878791" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1578234144672">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -293,10 +318,10 @@
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1578401217574" />
     <state x="531" y="236" key="run.anything.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1577555371420" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1578853856852">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="498" y="178" width="672" height="678" key="search.everywhere.popup" timestamp="1579089186246">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="498" y="178" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1576656625814" />
+    <state x="498" y="178" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1579089186246" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1578853856852" />
   </component>
 </project>

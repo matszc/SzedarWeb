@@ -2,7 +2,7 @@ import React from "react";
 import {treeConfig} from "../../components/bracket/treeConfig";
 import Game from "./game";
 
-const Bracket = ({data}) => {
+const Bracket = ({data, gameClick}) => {
 
     const size = {
         width: 240 * data[data.length - 1].round + 100,
@@ -31,6 +31,7 @@ const Bracket = ({data}) => {
                     return (
                         <g key={m.matchCode}>
                             <Game
+                                click={gameClick}
                                 config={treeConfig.game}
                                 position={pos}
                                 gameInfo={m}/>

@@ -1,24 +1,21 @@
 import * as React from "react";
 import api from "../../config";
-import Bracket from "../../components/bracket/bracket";
-import style from '../../components/bracket/bracket.module.scss';
+import style from "../../components/bracket/bracket.module.scss";
 import AddResultDialog from "../../components/dialogs/AddResultDialog/AddResultDialog";
-import AppContext from "../../context/appContext";
 
-export class SingleElimination extends React.Component {
-    static contextType = AppContext;
+export class DoubleElimination extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            rawData: undefined,
-            dragging: false,
+            upper: undefined,
+            lower: undefined,
+            final: undefined,
             dialog: {
                 open: false,
                 data: {},
             }
-        };
-        this.ref = React.createRef();
+        }
     }
 
     componentDidMount() {
@@ -26,12 +23,28 @@ export class SingleElimination extends React.Component {
     }
 
     loadData = () => {
-        api.get(`/singleElimination/flat/${this.props.match.params.id}`).then(({data}) => {
-            console.log(data);
+        api.get(`/doubleElimination/${this.props.match.params.id}`).then(({data}) => {
+            const finalMatchesFilter = data.filter(({matchCode}) => matchCode !== 'Final1' && matchCode !== 'Final2');
+            const final = data.filter(({matchCode}) => matchCode === 'Final1' && matchCode !== 'Final2');
+
+            const upperMatches = finalMatchesFilter.filter(({matchCode}) => matchCode[matchCode.length - 1] !== 'L')
+                .sort((a, b) => {
+                    return (a.matchCode < b.matchCode) ? -1 : (a.matchCode > b.matchCode) ? 1 : 0;
+                });
+
+            const lowerMatches = finalMatchesFilter.filter(({matchCode}) => matchCode[matchCode.length - 1] === 'L')
+                .sort((a, b) => {
+                    return (a.matchCode < b.matchCode) ? -1 : (a.matchCode > b.matchCode) ? 1 : 0;
+                });
+
+            console.log(upperMatches);
+
             this.setState(prevState => ({
                 ...prevState,
-                rawData: data,
-            }))
+                upper: upperMatches,
+                lower: lowerMatches,
+                final: final,
+            }));
         })
     };
 
@@ -58,34 +71,13 @@ export class SingleElimination extends React.Component {
         }))
     };
 
-    handleSubmit = (event) => {
-        event.preventDefault();
-
-        const data = {
-            Id: this.state.dialog.data.id,
-            Player1Score: parseInt(event.target[0].value, 10),
-            Player2Score: parseInt(event.target[1].value, 10),
-            Player1: this.state.dialog.data.player1,
-            Player2: this.state.dialog.data.player2,
-        };
-
-        api.patch('/singleElimination/match', data).then(() => {
-            this.handleDialogClose();
-            this.loadData();
-        })
-            .catch((r) => {
-                console.log(r);
-            })
-    };
-
     render() {
         return (
             <>
-                {this.state.rawData ?
+                {this.state.upper === undefined ?
                     <div className={style.container}
-                         ref={this.ref}
                     >
-                        <Bracket data={this.state.rawData} gameClick={this.handleGameSelect}/>
+                        {/*                        <Bracket data={this.state.upper} gameClick={this.handleGameSelect}/>*/}
                     </div> : null}
 
                 <AddResultDialog
