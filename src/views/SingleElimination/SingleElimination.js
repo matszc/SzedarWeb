@@ -1,7 +1,6 @@
 import * as React from "react";
 import api from "../../config";
 import Bracket from "../../components/bracket/bracket";
-import style from '../../components/bracket/bracket.module.scss';
 import AddResultDialog from "../../components/dialogs/AddResultDialog/AddResultDialog";
 import AppContext from "../../context/appContext";
 
@@ -18,7 +17,6 @@ export class SingleElimination extends React.Component {
                 data: {},
             }
         };
-        this.ref = React.createRef();
     }
 
     componentDidMount() {
@@ -82,11 +80,8 @@ export class SingleElimination extends React.Component {
         return (
             <>
                 {this.state.rawData ?
-                    <div className={style.container}
-                         ref={this.ref}
-                    >
-                        <Bracket upper={this.state.rawData} gameClick={this.handleGameSelect}/>
-                    </div> : null}
+                    <Bracket upper={this.state.rawData} gameClick={this.handleGameSelect}/>
+                    : null}
 
                 <AddResultDialog
                     open={this.state.dialog.open}

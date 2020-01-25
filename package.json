@@ -11,6 +11,7 @@
     "prop-types": "latest",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-dragscroll": "^2.0.1",
     "react-facebook-login": "^4.1.1",
     "react-material-ui-form-validator": "^2.0.9",
     "react-moment": "^0.9.7",

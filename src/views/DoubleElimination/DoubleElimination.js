@@ -1,6 +1,5 @@
 import * as React from "react";
 import api from "../../config";
-import style from "../../components/bracket/bracket.module.scss";
 import AddResultDialog from "../../components/dialogs/AddResultDialog/AddResultDialog";
 import Bracket from "../../components/bracket/bracket";
 
@@ -74,13 +73,11 @@ export class DoubleElimination extends React.Component {
         return (
             <>
                 {this.state.upper !== undefined ?
-                    <div className={style.container}
-                    >
-                        <Bracket upper={this.state.upper}
-                                 lower={this.state.lower}
-                                 final={this.state.final}
-                                 gameClick={this.handleGameSelect}/>
-                    </div> : null}
+                    <Bracket upper={this.state.upper}
+                             lower={this.state.lower}
+                             final={this.state.final}
+                             gameClick={this.handleGameSelect}/>
+                    : null}
 
                 <AddResultDialog
                     open={this.state.dialog.open}
