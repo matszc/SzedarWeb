@@ -85,7 +85,7 @@ export class SingleElimination extends React.Component {
                     <div className={style.container}
                          ref={this.ref}
                     >
-                        <Bracket data={this.state.rawData} gameClick={this.handleGameSelect}/>
+                        <Bracket upper={this.state.rawData} gameClick={this.handleGameSelect}/>
                     </div> : null}
 
                 <AddResultDialog

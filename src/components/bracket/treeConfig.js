@@ -7,5 +7,9 @@ export const treeConfig = {
         playerBackground: '#424242',
         scoreBackground: '#ff5722',
         color: 'white',
+    },
+    path: {
+        color: 'white',
+        strokeWidth: '1',
     }
 };

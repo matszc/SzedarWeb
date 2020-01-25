@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08e4705e-aee4-4673-909d-65a7d4f1375d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/views/DoubleElimination/DoubleElimination.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/bracket/bracket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bracket/bracket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/bracket/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bracket/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/bracket/treeConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bracket/treeConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/DoubleElimination/DoubleElimination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/DoubleElimination/DoubleElimination.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/SingleElimination/SingleElimination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SingleElimination/SingleElimination.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +137,8 @@
       <workItem from="1579607819309" duration="682000" />
       <workItem from="1579610963751" duration="630000" />
       <workItem from="1579701227950" duration="1798000" />
-      <workItem from="1579783606136" duration="538000" />
+      <workItem from="1579783606136" duration="3844000" />
+      <workItem from="1579951519288" duration="11037000" />
     </task>
     <task id="LOCAL-00001" summary="config layout">
       <created>1572801962344</created>
@@ -188,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578951730352</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="double elimination">
+      <created>1579784170745</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1579784170745</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,16 +223,17 @@
     <MESSAGE value="finish swiss tournament" />
     <MESSAGE value="prepare single elimination view" />
     <MESSAGE value="create single elimination tree" />
-    <option name="LAST_COMMIT_MESSAGE" value="create single elimination tree" />
+    <MESSAGE value="double elimination" />
+    <option name="LAST_COMMIT_MESSAGE" value="double elimination" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="491" y="8" key="CommitChangelistDialog2" timestamp="1578951729300">
+    <state x="491" y="8" key="CommitChangelistDialog2" timestamp="1579968571690">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="393" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1578402870586" />
-    <state x="491" y="8" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1578951729300" />
+    <state x="393" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1579784169724" />
+    <state x="491" y="8" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1579968571690" />
     <state width="1515" height="261" key="GridCell.Tab.0.bottom" timestamp="1579086665347">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

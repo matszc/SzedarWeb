@@ -26,6 +26,7 @@ export const Game = ({config, position, gameInfo, click}) => {
 
 Game.propTypes = {
     config: PropTypes.object,
+    click: PropTypes.func,
 };
 
 export default Game;
