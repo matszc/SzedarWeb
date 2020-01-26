@@ -25,14 +25,21 @@ const RegisterDialog = ({children, color, variant, handleUserChange}) => {
 
     const submitForm = (e) => {
         e.preventDefault();
+        if (e.target[2].value.length < 8) {
+            context.snack.setSnack('error', 'Password should be contains 8 characters');
+            return;
+        }
         const payload = {
             Email: e.target[1].value,
             Login: e.target[0].value,
             Password: e.target[2].value,
         };
-        api.post('/user/register', payload).then(r => {
-            console.log(r);
+        api.post('/user/register', payload).then(() => {
             context.snack.setSnack('success', 'User created');
+            api.post('/user/login', {Login: payload.Login, Password: payload.Password}).then(r => {
+                localStorage.setItem('user', JSON.stringify(r.data));
+                handleUserChange();
+            });
             handleClose();
         })
             .catch(r => {

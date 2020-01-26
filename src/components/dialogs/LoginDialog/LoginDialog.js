@@ -36,7 +36,6 @@ const LoginDialog = ({children, color, variant, handleUserChange}) => {
             context.snack.setSnack('success', 'User login success');
             handleUserChange();
         }).catch(r => {
-            console.log(r);
             context.snack.setSnack('error', r.response ? r.response.data : 'Server seems to be down');
         });
     };

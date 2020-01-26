@@ -9,7 +9,6 @@ const MyFacebookLogin = ({onClick, handleUserChange}) => {
     const context = React.useContext(AppContext);
 
     const responseFacebook = (r) => {
-        console.log(r);
         const fbUser = {
             Login: r.name,
             Email: r.email,
@@ -21,7 +20,7 @@ const MyFacebookLogin = ({onClick, handleUserChange}) => {
                 context.snack.setSnack('success', 'User login success');
                 handleUserChange();
             })
-            .catch(r => context.snack.setSnack('error', 'User login error'));
+            .catch(() => context.snack.setSnack('error', 'User login error'));
     };
     return (
         <FacebookLogin

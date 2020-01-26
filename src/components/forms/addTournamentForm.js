@@ -85,11 +85,15 @@ export class AddTournamentForm extends React.Component {
         return (
             <>
                 <FormGroup>
-                    <FormControl required>
+                    <FormControl required
+                                 margin={'dense'}
+                    >
                         <InputLabel htmlFor='name'>Name</InputLabel>
                         <Input id='name' value={this.state.name} onChange={this.handleNameChange}/>
                     </FormControl>
-                    <FormControl required>
+                    <FormControl required
+                                 margin={'normal'}
+                    >
                         <InputLabel id='type'>Type</InputLabel>
                         <Select labelId='type' value={this.state.type} onChange={this.handleTypeChange}>
                             {this.types.map((i, index) => (
@@ -99,7 +103,8 @@ export class AddTournamentForm extends React.Component {
                     </FormControl>
                     {!this.state.type.length ? null :
                         this.state.players.map((item, index) => (
-                            <FormControl key={index}>
+                            <FormControl key={index}
+                                         margin={'dense'}>
                                 <InputLabel htmlFor={index.toString()}>Player {index + 1}</InputLabel>
                                 <Input value={this.state.players[index]}
                                        onChange={(e) => this.handlePlayerChange(e, index)}
@@ -107,7 +112,7 @@ export class AddTournamentForm extends React.Component {
                             </FormControl>
                         ))}
                     {!this.state.type.length ? null : (
-                        <Link href='#' onClick={this.addPlayer}>Add player</Link>
+                        <Link href='#' className={'margin_10_0'} onClick={this.addPlayer}>Add player</Link>
                     )}
 
                     {!(this.state.type === 'Swiss') ? null : (
@@ -123,7 +128,7 @@ export class AddTournamentForm extends React.Component {
                         </FormControl>
                     )}
 
-                    <Button variant="contained" color="primary"
+                    <Button variant="contained" color="primary" className={'margin_10'}
                             onClick={this.createTournament}>Create</Button>
                 </FormGroup>
             </>

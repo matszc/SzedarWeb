@@ -20,11 +20,13 @@ const AddResultDialog = ({open, data, handleClose, handleSubmit}) => {
                         margin={'dense'}
                         label={data.player1}
                         defaultValue={data.player1Score}
+                        className={'margin_10'}
                     />
                     <TextField
                         label={data.player2}
                         defaultValue={data.player2Score}
                         margin={'dense'}
+                        className={'margin_10'}
                     />
                 </DialogContent>
                 <DialogActions>

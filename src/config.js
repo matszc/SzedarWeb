@@ -23,6 +23,7 @@ api.interceptors.response.use(config => {
     return config;
 }, (error) => {
     document.querySelector('.Superhidenbuttom').click();
+    console.error(error);
     return Promise.reject(error);
 });
 

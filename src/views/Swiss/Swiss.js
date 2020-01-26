@@ -7,47 +7,13 @@ import SwissRound from "../../components/tables/swissRound";
 import AddResultDialog from "../../components/dialogs/AddResultDialog/AddResultDialog";
 import Button from "@material-ui/core/Button";
 import style from "./swiss.module.scss"
-
-const columns = [{
-    id: 'position',
-    label: 'Pos',
-    format: v => v.toLocaleString(),
-}, {
-    id: 'player',
-    label: 'Name',
-    format: v => v.toLocaleString(),
-}, {
-    id: 'matchesWon',
-    label: 'Wins',
-    format: v => v.toLocaleString(),
-}, {
-    id: 'matchesLost',
-    label: 'Loses',
-    format: v => v.toLocaleString(),
-}, {
-    id: 'winRatio',
-    label: 'Wins / Loses',
-    format: v => v.toLocaleString(),
-}, {
-    id: 't1',
-    label: 'T1',
-    format: v => v.toLocaleString(),
-}, {
-    id: 't2',
-    label: 'T2',
-    format: v => v.toLocaleString(),
-}, {
-    id: 't3',
-    label: 'T3',
-    format: v => v.toLocaleString(),
-}, {
-    id: 'points',
-    label: 'Points',
-    format: v => v.toLocaleString(),
-}];
+import columns from "./tableCloumns";
+import AppContext from "../../context/appContext";
 
 
 export class Swiss extends React.Component {
+
+    static contextType = AppContext;
 
     constructor(props) {
         super(props);
@@ -70,12 +36,22 @@ export class Swiss extends React.Component {
         const user = JSON.parse(localStorage.getItem('user'));
         this.setState(prevState => ({
             ...prevState,
-            userId: user.id,
+            userId: user ? user.id : '',
         }));
     }
 
     loadData = () => {
         api.get(`/swiss/${this.props.match.params.id}`).then(r => {
+            const rounds = r.data.rounds.map((i, index) => {
+                return {
+                    matchDtos: i.matchDtos.map(m => {
+                        return {
+                            ...m,
+                            round: index + 1,
+                        }
+                    })
+                }
+            });
             const roundArray = [];
             for (let i = 1; i <= r.data.numberOfRounds; i++) {
                 roundArray.push(i);
@@ -87,14 +63,11 @@ export class Swiss extends React.Component {
             this.setState(prevState => ({
                 ...prevState,
                 swissTable: swissTable,
-                rounds: r.data.rounds,
+                rounds: rounds,
                 numberOfRounds: roundArray,
                 ownerId: r.data.ownerId,
             }));
-        }).catch((r) => {
-            //TODO show snack on error
-            console.error(r.data)
-        })
+        });
     };
 
     handleTabChange = (e, newValue) => {
@@ -106,6 +79,12 @@ export class Swiss extends React.Component {
 
     handleScoreSubmit = (e) => {
         e.preventDefault();
+
+        if (this.state.dialog.data.round < this.state.rounds.length) {
+            this.context.snack.setSnack('error', 'match is already finished');
+            this.handleCloseDialog();
+            return;
+        }
         const data = {
             Id: this.state.dialog.data.id,
             Player1Score: parseInt(e.target[0].value, 10),

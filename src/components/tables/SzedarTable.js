@@ -80,7 +80,7 @@ const SzedarTable = ({data, rowClick, columns, paginator}) => {
                 </div>
                 {paginator ?
                     <TablePagination
-                        rowsPerPageOptions={[10, 25, 100]}
+                        rowsPerPageOptions={[10, 20, 30, 50]}
                         component="div"
                         count={data.length}
                         rowsPerPage={rowsPerPage}

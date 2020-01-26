@@ -9,6 +9,8 @@ import CreateTournamentComponent from "./views/CreateTournament/CreateTournament
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import CustomSnackbar from "./components/snacks/snack";
 import {Swiss} from "./views/Swiss/Swiss";
+import {SingleElimination} from "./views/SingleElimination/SingleElimination";
+import {DoubleElimination} from "./views/DoubleElimination/DoubleElimination";
 
 class App extends React.Component {
 
@@ -34,16 +36,6 @@ class App extends React.Component {
         });
     };
 
-    setUser = (id, login) => {
-        this.setState({
-            ...this.state,
-            user: {
-                id: id,
-                login: login,
-            }
-        })
-    };
-
     hideSnack = () => {
         this.setState({
             ...this.state,
@@ -65,11 +57,6 @@ class App extends React.Component {
             open: false,
             setSnack: this.setSnack,
         },
-        user: {
-            id: '',
-            login: '',
-            setUser: this.setUser,
-        }
     };
 
     render() {
@@ -83,6 +70,8 @@ class App extends React.Component {
                                 <Route exact path='/browse' component={BrowseTournamentsComponent}/>
                                 <Route path='/create' component={CreateTournamentComponent}/>
                                 <Route path='/browse/swiss/:id' component={Swiss}/>
+                                <Route path='/browse/single/:id' component={SingleElimination}/>
+                                <Route path='/browse/double/:id' component={DoubleElimination}/>
                             </Switch>
                         </ResponsiveDrawer>
                         <CustomSnackbar variant={this.state.snack.variant}
