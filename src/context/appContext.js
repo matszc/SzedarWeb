@@ -13,12 +13,6 @@ const AppContext = React.createContext({
         setSnack: () => {
         }
     },
-    user: {
-        id: '',
-        login: '',
-        setUser: () => {
-        }
-    }
 });
 
 export default AppContext;

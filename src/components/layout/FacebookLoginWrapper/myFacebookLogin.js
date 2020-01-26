@@ -9,7 +9,6 @@ const MyFacebookLogin = ({onClick, handleUserChange}) => {
     const context = React.useContext(AppContext);
 
     const responseFacebook = (r) => {
-        console.log(r);
         const fbUser = {
             Login: r.name,
             Email: r.email,
@@ -19,7 +18,6 @@ const MyFacebookLogin = ({onClick, handleUserChange}) => {
             .then(r => {
                 localStorage.setItem('user', JSON.stringify(r.data));
                 context.snack.setSnack('success', 'User login success');
-                context.user.setUser(r.data.id, r.data.login);
                 handleUserChange();
             })
             .catch(() => context.snack.setSnack('error', 'User login error'));

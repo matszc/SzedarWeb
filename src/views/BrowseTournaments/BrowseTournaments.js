@@ -33,11 +33,15 @@ class BrowseTournamentsComponent extends React.Component {
 
     componentDidMount() {
         api.get('/tournament/GetAll').then(r => {
-            const tournamentList = r.data.map(t => ({
-                ...t,
-                creationDate: moment(t.creationDate).format('DD-MM-YYYY HH:mm'),
-                type: tournamentTypes(t.type),
-            }));
+            const tournamentList = r.data.map(t => {
+                const date = new Date(t.creationDate);
+                date.setHours(date.getHours() + 1);
+                return {
+                    ...t,
+                    creationDate: moment(date).format('DD-MM-YYYY HH:mm'),
+                    type: tournamentTypes(t.type),
+                }
+            });
             this.setState((prevState) => ({
                 ...prevState,
                 tournamentList: tournamentList,

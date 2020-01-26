@@ -3,7 +3,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -13,6 +12,9 @@ import {NavBar} from "./NavBar";
 import CircularIndeterminate from './spiner/spiner';
 import AppContext from "../../context/appContext";
 import {NavLink} from "react-router-dom";
+import AddIcon from '@material-ui/icons/Add';
+import HomeIcon from '@material-ui/icons/Home';
+import ListAltIcon from '@material-ui/icons/ListAlt';
 
 const drawerWidth = 240;
 
@@ -63,21 +65,21 @@ function ResponsiveDrawer(props) {
             <List>
                 <NavLink exact to='/' className={classes.link} activeClassName={classes.activeLink}>
                     <ListItem button key='Home'>
-                        <ListItemIcon><InboxIcon/></ListItemIcon>
+                        <ListItemIcon><HomeIcon/></ListItemIcon>
                         <ListItemText primary='Home'/>
                     </ListItem>
                 </NavLink>
                 <Divider/>
                 <NavLink to='/create' className={classes.link} activeClassName={classes.activeLink}>
                     <ListItem button key='Create Tournament'>
-                        <ListItemIcon><InboxIcon/></ListItemIcon>
+                        <ListItemIcon><AddIcon/></ListItemIcon>
                         <ListItemText primary='Create Tournament'/>
                     </ListItem>
                 </NavLink>
                 <Divider/>
                 <NavLink to='/browse' className={classes.link} activeClassName={classes.activeLink}>
                     <ListItem button key='Browse Tournaments'>
-                        <ListItemIcon><InboxIcon/></ListItemIcon>
+                        <ListItemIcon><ListAltIcon/></ListItemIcon>
                         <ListItemText primary='Browse Tournaments'/>
                     </ListItem>
                 </NavLink>

@@ -34,10 +34,8 @@ const LoginDialog = ({children, color, variant, handleUserChange}) => {
         api.post('/user/login', loginData).then(r => {
             localStorage.setItem('user', JSON.stringify(r.data));
             context.snack.setSnack('success', 'User login success');
-            context.user.setUser(r.data.id, r.data.login);
             handleUserChange();
         }).catch(r => {
-            console.log(r);
             context.snack.setSnack('error', r.response ? r.response.data : 'Server seems to be down');
         });
     };

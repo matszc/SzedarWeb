@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08e4705e-aee4-4673-909d-65a7d4f1375d" name="Default Changelist" comment="">
+    <list default="true" id="08e4705e-aee4-4673-909d-65a7d4f1375d" name="Default Changelist" comment="layout fixes">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/bracket/bracket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bracket/bracket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/bracket/bracket.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bracket/bracket.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/AddResultDialog/AddResultDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/AddResultDialog/AddResultDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/LoginDialog/LoginDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/LoginDialog/LoginDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/RegisterDialog/RegisterDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/RegisterDialog/RegisterDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/addTournamentForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/addTournamentForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homeContent/HomeContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homeContent/HomeContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/FacebookLoginWrapper/myFacebookLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/FacebookLoginWrapper/myFacebookLogin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Logout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/ResponsiveDrawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/ResponsiveDrawer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/tables/SzedarTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tables/SzedarTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/appContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/appContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/BrowseTournaments/BrowseTournaments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/BrowseTournaments/BrowseTournaments.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/DoubleElimination/DoubleElimination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/DoubleElimination/DoubleElimination.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/SingleElimination/SingleElimination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SingleElimination/SingleElimination.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Swiss/Swiss.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Swiss/Swiss.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +151,10 @@
       <workItem from="1579610963751" duration="630000" />
       <workItem from="1579701227950" duration="1798000" />
       <workItem from="1579783606136" duration="3844000" />
-      <workItem from="1579951519288" duration="13256000" />
+      <workItem from="1579951519288" duration="17090000" />
+      <workItem from="1579993274220" duration="1328000" />
+      <workItem from="1580035314456" duration="4460000" />
+      <workItem from="1580062603271" duration="7370000" />
     </task>
     <task id="LOCAL-00001" summary="config layout">
       <created>1572801962344</created>
@@ -204,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579968594058</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="scroll on drag">
+      <created>1579971030882</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1579971030882</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,16 +255,18 @@
     <MESSAGE value="create single elimination tree" />
     <MESSAGE value="double elimination" />
     <MESSAGE value="drawing lower bracket" />
-    <option name="LAST_COMMIT_MESSAGE" value="drawing lower bracket" />
+    <MESSAGE value="scroll on drag" />
+    <MESSAGE value="layout fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="layout fixes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="491" y="8" key="CommitChangelistDialog2" timestamp="1579968592794">
+    <state x="491" y="8" key="CommitChangelistDialog2" timestamp="1580069921537">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="393" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1579784169724" />
-    <state x="491" y="8" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1579968592794" />
+    <state x="491" y="8" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1580069921537" />
     <state width="1515" height="261" key="GridCell.Tab.0.bottom" timestamp="1579086665347">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -331,15 +355,19 @@
       <screen x="1920" y="0" width="1536" height="824" />
     </state>
     <state x="1920" y="56" width="1440" height="718" key="dock-window-1/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1576432208391" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1578401217574">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="656" y="252" width="607" height="536" key="find.popup" timestamp="1580069515295">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="252" width="607" height="536" key="find.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1580069515295" />
+    <state x="531" y="236" key="run.anything.popup" timestamp="1580066658461">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1578401217574" />
-    <state x="531" y="236" key="run.anything.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1577555371420" />
-    <state x="498" y="178" width="672" height="678" key="search.everywhere.popup" timestamp="1579089186246">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="531" y="236" key="run.anything.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1580066658461" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1580069502676">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="498" y="178" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1579089186246" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1578853856852" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1580069502676" />
   </component>
 </project>

@@ -1,30 +1,36 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 
-const HomeContent = (props) => (
+const HomeContent = () => (
     <>
         <Typography paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-            facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-            gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-            donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-            adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-            Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-            imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-            arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-            donec massa sapien faucibus et molestie ac.
+            Szedar is a wabside that helps you to organize tournament in online games.<br/>
+            You can choose one of three possible formats:<br/>
+            -Swiss system<br/>
+            -Double elimination tree<br/>
+            -Single elimination tree<br/>
         </Typography>
         <Typography paragraph>
-            Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-            facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-            tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
-            consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-            vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
-            hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-            tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
-            nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
-            accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
+            Swiss system matching algorithm is focused on matching pairs that didn't play each other yet,
+            second criterion is matching players that are closes to each other in current table.
+            It means if you setup numbers of round equal to number of players - 1 so every player will play each other
+            in this tournament.<br/>
+            In order to start new round owner of tournament have to manually create it using showed button.
+            When you create new round previous matches are no longer possible to edit results.<br/>
+            The tie breakers in swiss are following:<br/>
+            T1 - number of player's opponents wins<br/>
+            T2 - number of player's opponents T1s<br/>
+            T3 - difference between player's small matches win and lost
+        </Typography>
+        <Typography paragraph>
+            Elimination system provides you bracket when owner of tournament can insert results.<br/>
+            Seeds in tournament are based on order how players name were inserted during creation (1 player - 1 seed, 2
+            player - 2 seed...)<br/>
+            You can edit match results only until next match result isn't provided.
+        </Typography>
+        <Typography paragraph>
+            This is first version of application if you want to report any error or make a feature request contact me
+            on <strong>mateuszszczesniak25@gmail.com</strong>
         </Typography>
     </>
 );

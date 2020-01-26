@@ -8,6 +8,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import LoginDialog from "../dialogs/LoginDialog/LoginDialog";
 import RegisterDialog from "../dialogs/RegisterDialog/RegisterDialog";
 import Logout from "./Logout";
+import {Link} from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -34,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const NavBar = ({handleDrawerToggle, children}) => {
-//    const localUser = JSON.parse(localStorage.getItem('user'));
     const [user, setUser] = React.useState(JSON.parse(localStorage.getItem('user')));
 
     const handleUserChange = () => {
@@ -54,7 +54,7 @@ export const NavBar = ({handleDrawerToggle, children}) => {
                     <MenuIcon/>
                 </IconButton>
                 <Typography className={classes.title} variant="h5" noWrap>
-                    {children}
+                    <Link to={'/'} style={{textDecoration: 'none', color: 'white'}}> {children}</Link>
                 </Typography>
                 {user ? <Logout variant='outlined' handleUserChange={handleUserChange}>{user.login}</Logout>
                         : (<LoginDialog handleUserChange={handleUserChange} variant='contained'>Login</LoginDialog>)}

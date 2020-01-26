@@ -25,7 +25,6 @@ export class SingleElimination extends React.Component {
 
     loadData = () => {
         api.get(`/singleElimination/flat/${this.props.match.params.id}`).then(({data}) => {
-            console.log(data);
             this.setState(prevState => ({
                 ...prevState,
                 rawData: data,
@@ -71,8 +70,9 @@ export class SingleElimination extends React.Component {
             this.handleDialogClose();
             this.loadData();
         })
-            .catch((r) => {
-                console.log(r);
+            .catch(() => {
+                this.context.snack.setSnack('error', 'Could\'t add result ');
+                this.handleDialogClose();
             })
     };
 
