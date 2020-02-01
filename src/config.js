@@ -59,5 +59,50 @@ export const tournamentTypes = (type) => {
     return type;
 };
 
+export const gameTypes = (type) => {
+    switch (type) {
+        case 0: {
+            type = '';
+            break;
+        }
+        case 1: {
+            type = 'LeagueOfLegends';
+            break;
+        }
+        case 2: {
+            type = 'Hearthstone';
+            break;
+        }
+        case 3: {
+            type = 'Counter-Strike Global Offensive';
+            break;
+        }
+        case 4: {
+            type = 'Dota 2';
+            break;
+        }
+        case 5: {
+            type = 'Overwatch';
+            break;
+        }
+        case 6: {
+            type = 'Rocket League';
+            break;
+        }
+        case 7: {
+            type = 'Fifa';
+            break;
+        }
+        case 8: {
+            type = 'Other';
+            break;
+        }
+        default: {
+            type = '';
+        }
+    }
+    return type;
+};
+
 
 export default api;

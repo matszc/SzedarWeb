@@ -8,6 +8,7 @@ import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 import TablePagination from "@material-ui/core/TablePagination";
 import PropTypes, {object} from "prop-types";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles({
     root: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles({
 });
 
 
-const SzedarTable = ({data, rowClick, columns, paginator}) => {
+const SzedarTable = ({data, rowClick, columns, paginator, startClick}) => {
 
     const classes = useStyles();
     const [page, setPage] = React.useState(0);
@@ -72,6 +73,14 @@ const SzedarTable = ({data, rowClick, columns, paginator}) => {
                                                 </TableCell>
                                             )
                                         })}
+                                        {row.open && startClick ?
+                                            <TableCell>
+                                                <Button variant="contained" color="primary"
+                                                        onClick={() => startClick(row)}>
+                                                    Start
+                                                </Button>
+                                            </TableCell>
+                                            : null}
                                     </TableRow>
                                 )
                             })}
