@@ -45,7 +45,6 @@ class BrowseTournamentsComponent extends React.Component {
 
     loadData = () => {
         api.get('/tournament/GetAll').then(r => {
-            console.log(r.data);
             const tournamentList = r.data.map(t => {
                 const date = new Date(t.creationDate);
                 date.setHours(date.getHours() + 1);

@@ -57,7 +57,7 @@ const SzedarTable = ({data, rowClick, columns, paginator, startClick}) => {
                             {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(row => {
                                 return (
                                     <TableRow
-                                        hover
+                                        hover={!row.open}
                                         role={'checkbox'}
                                         tabIndex={-1}
                                         key={row.id}

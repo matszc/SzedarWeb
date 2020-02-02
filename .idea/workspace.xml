@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08e4705e-aee4-4673-909d-65a7d4f1375d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/cards/tournamentCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cup.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Ranking/Ranking.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/addTournamentForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/addTournamentForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/ResponsiveDrawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/ResponsiveDrawer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/tables/SzedarTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tables/SzedarTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/BrowseTournaments/BrowseTournaments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/BrowseTournaments/BrowseTournaments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/CreateTournament/CreateTournament.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/CreateTournament/CreateTournament.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home/Home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +52,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mateusz\Desktop\SzedarWeb\src" />
+      <recent name="C:\Users\Mateusz\Desktop\SzedarWeb\src\views" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/components/Dialogs" />
     </key>
@@ -150,7 +152,8 @@
       <workItem from="1580294582239" duration="14000" />
       <workItem from="1580494674248" duration="751000" />
       <workItem from="1580558746697" duration="14359000" />
-      <workItem from="1580592124064" duration="3368000" />
+      <workItem from="1580592124064" duration="3552000" />
+      <workItem from="1580650151151" duration="15726000" />
     </task>
     <task id="LOCAL-00001" summary="config layout">
       <created>1572801962344</created>
@@ -229,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580070256800</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add open tournaments">
+      <created>1580596656735</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1580596656735</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,16 +270,17 @@
     <MESSAGE value="drawing lower bracket" />
     <MESSAGE value="scroll on drag" />
     <MESSAGE value="layout fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="layout fixes" />
+    <MESSAGE value="add open tournaments" />
+    <option name="LAST_COMMIT_MESSAGE" value="add open tournaments" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="491" y="8" key="CommitChangelistDialog2" timestamp="1580070255683">
+    <state x="491" y="8" key="CommitChangelistDialog2" timestamp="1580596655880">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="393" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1579784169724" />
-    <state x="491" y="8" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1580070255683" />
+    <state x="491" y="8" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1580596655880" />
     <state width="1515" height="261" key="GridCell.Tab.0.bottom" timestamp="1579086665347">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -350,10 +361,18 @@
     </state>
     <state width="1515" height="261" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1579086665347" />
     <state width="1899" height="348" key="GridCell.Tab.3.right/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1577053878791" />
+    <state x="779" y="232" key="RollbackChangesDialog" timestamp="1580653136586">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="779" y="232" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1580653136586" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1578234144672">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1578234144672" />
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1580596672141">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1580596672141" />
     <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580593419414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -366,11 +385,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="252" width="607" height="536" key="find.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1580564633172" />
-    <state x="531" y="236" key="run.anything.popup" timestamp="1580066658461">
+    <state x="531" y="236" key="run.anything.popup" timestamp="1580658754346">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1578401217574" />
-    <state x="531" y="236" key="run.anything.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1580066658461" />
+    <state x="531" y="236" key="run.anything.popup/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1580658754346" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1580572423223">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

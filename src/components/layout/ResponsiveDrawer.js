@@ -53,6 +53,7 @@ function ResponsiveDrawer(props) {
     const classes = useStyles();
     const theme = useTheme();
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const user = JSON.parse(localStorage.getItem('user'));
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -81,6 +82,13 @@ function ResponsiveDrawer(props) {
                     <ListItem button key='Browse Tournaments'>
                         <ListItemIcon><ListAltIcon/></ListItemIcon>
                         <ListItemText primary='Browse Tournaments'/>
+                    </ListItem>
+                </NavLink>
+                <Divider/>
+                <NavLink to={user ? `/ranking/${user.id}` : `ranking/`} className={classes.link}>
+                    <ListItem button key={'Ranking'}>
+                        <ListItemIcon><ListAltIcon/></ListItemIcon>
+                        <ListItemText primary={'Ranking'}/>
                     </ListItem>
                 </NavLink>
             </List>
