@@ -34,7 +34,7 @@ class HomeComponent extends React.Component {
         })
     };
 
-    onJoin = (id) => {
+    onJoin = ({id}) => {
         const user = JSON.parse(localStorage.getItem('user'));
         if (!user) {
             this.context.snack.setSnack('error', 'Please create account first');
@@ -71,7 +71,8 @@ class HomeComponent extends React.Component {
                         this.state.tournaments.map((i, index) => {
                             return (
                                 <Grid key={index} item>
-                                    <TournamentCard data={i} onJoin={this.onJoin}/>
+                                    <TournamentCard data={i} onAction={this.onJoin} maxWidth={370}
+                                                    actionText={'Join tournament'}/>
                                 </Grid>
                             )
                         }) : null

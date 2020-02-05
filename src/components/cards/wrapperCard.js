@@ -5,12 +5,12 @@ import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 import PropTypes from "prop-types";
 
-const WrapperCard = ({maxWidth, title, children}) => {
+const WrapperCard = ({maxWidth, title, children, style}) => {
     return (
-        <Container maxWidth={maxWidth}>
-            <Card>
-                <CardHeader title={title}/>
-                <CardContent>
+        <Container maxWidth={maxWidth} style={{margin: '50px auto'}}>
+            <Card style={style}>
+                <CardHeader style={{marginBottom: '20px'}} title={title}/>
+                <CardContent style={{padding: '10px'}}>
                     {children}
                 </CardContent>
             </Card>

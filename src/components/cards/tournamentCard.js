@@ -11,20 +11,17 @@ import moment from "moment";
 import {gameTypes} from "../../config";
 
 const useStyles = makeStyles({
-    root: {
-        maxWidth: 370,
-    },
     paragraph: {
         margin: '10px 0',
     }
 });
 
-export const TournamentCard = ({data, onJoin}) => {
+export const TournamentCard = ({data, onAction, maxWidth, actionText, hidePlayers}) => {
     const classes = useStyles();
     const date = new Date(data.startDate);
     const startDate = moment(date.setHours(date.getHours() + 1)).format('DD-MM-YYYY HH:mm');
     return (
-        <Card className={classes.root}>
+        <Card style={{maxWidth: maxWidth}}>
             <CardMedia
                 component="img"
                 alt="Tournament image"
@@ -43,15 +40,15 @@ export const TournamentCard = ({data, onJoin}) => {
                     Start Date: {startDate}
                 </Typography>
                 <Typography className={classes.paragraph} variant="body2" color="textSecondary" component="p">
-                    Players: {data.numberOfPlayers} / {data.maxNumberOfPlayers}
+                    {hidePlayers ? null : `Players: ${data.numberOfPlayers} / ${data.maxNumberOfPlayers}`}
                 </Typography>
                 <Typography className={classes.paragraph} variant="body2" color="textSecondary" component="p">
                     Address: {data.address} {data.city}
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button onClick={() => onJoin(data.id)} size="large" color="primary">
-                    Join tournament
+                <Button onClick={() => onAction(data)} size="large" color="primary">
+                    {actionText}
                 </Button>
             </CardActions>
         </Card>

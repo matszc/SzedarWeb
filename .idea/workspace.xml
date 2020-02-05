@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08e4705e-aee4-4673-909d-65a7d4f1375d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/cards/tournamentCard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cup.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Ranking/Ranking.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Profile/Profile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cards/tournamentCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cards/tournamentCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cards/wrapperCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cards/wrapperCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/layout/ResponsiveDrawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/ResponsiveDrawer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/tables/SzedarTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tables/SzedarTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/tables/swissRound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tables/swissRound.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Ranking/Ranking.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Ranking/Ranking.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +154,13 @@
       <workItem from="1580494674248" duration="751000" />
       <workItem from="1580558746697" duration="14359000" />
       <workItem from="1580592124064" duration="3552000" />
-      <workItem from="1580650151151" duration="15726000" />
+      <workItem from="1580650151151" duration="15877000" />
+      <workItem from="1580760384732" duration="4110000" />
+      <workItem from="1580836085666" duration="3449000" />
+      <workItem from="1580846904404" duration="8549000" />
+      <workItem from="1580906074543" duration="644000" />
+      <workItem from="1580908600136" duration="1264000" />
+      <workItem from="1580911223224" duration="2841000" />
     </task>
     <task id="LOCAL-00001" summary="config layout">
       <created>1572801962344</created>
@@ -239,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580596656735</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="join and search tournaments">
+      <created>1580682106578</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1580682106578</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,16 +285,17 @@
     <MESSAGE value="scroll on drag" />
     <MESSAGE value="layout fixes" />
     <MESSAGE value="add open tournaments" />
-    <option name="LAST_COMMIT_MESSAGE" value="add open tournaments" />
+    <MESSAGE value="join and search tournaments" />
+    <option name="LAST_COMMIT_MESSAGE" value="join and search tournaments" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="491" y="8" key="CommitChangelistDialog2" timestamp="1580596655880">
+    <state x="491" y="8" key="CommitChangelistDialog2" timestamp="1580682105812">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="393" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1579784169724" />
-    <state x="491" y="8" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1580596655880" />
+    <state x="491" y="8" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1536.824@0.0.1920.1040" timestamp="1580682105812" />
     <state width="1515" height="261" key="GridCell.Tab.0.bottom" timestamp="1579086665347">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

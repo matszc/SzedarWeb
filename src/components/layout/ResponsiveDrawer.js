@@ -15,6 +15,9 @@ import {NavLink} from "react-router-dom";
 import AddIcon from '@material-ui/icons/Add';
 import HomeIcon from '@material-ui/icons/Home';
 import ListAltIcon from '@material-ui/icons/ListAlt';
+import PersonIcon from '@material-ui/icons/Person';
+import StorageIcon from '@material-ui/icons/Storage';
+
 
 const drawerWidth = 240;
 
@@ -87,8 +90,15 @@ function ResponsiveDrawer(props) {
                 <Divider/>
                 <NavLink to={user ? `/ranking/${user.id}` : `ranking/`} className={classes.link}>
                     <ListItem button key={'Ranking'}>
-                        <ListItemIcon><ListAltIcon/></ListItemIcon>
+                        <ListItemIcon><StorageIcon/></ListItemIcon>
                         <ListItemText primary={'Ranking'}/>
+                    </ListItem>
+                </NavLink>
+                <Divider/>
+                <NavLink to={user ? `/profile/${user.id}` : `profile/`} className={classes.link}>
+                    <ListItem button key={'Profile'}>
+                        <ListItemIcon><PersonIcon/></ListItemIcon>
+                        <ListItemText primary={'Profile'}/>
                     </ListItem>
                 </NavLink>
             </List>
