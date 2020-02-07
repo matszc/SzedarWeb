@@ -21,9 +21,10 @@ const useStyles = makeStyles(() => ({
 
 const SwissRound = ({data, click}) => {
 
-    const classes = useStyles();
+    const classes = useStyles(useStyles);
 
     const columns = ['player1', 'player1Score', 'player2Score', 'player2', 'actions'];
+    console.log(data);
 
     return (
         <>
@@ -52,6 +53,11 @@ const SwissRound = ({data, click}) => {
             </div>
         </>
     )
+};
+
+SwissRound.defaultProps = {
+    click: () => {
+    }
 };
 
 export default SwissRound

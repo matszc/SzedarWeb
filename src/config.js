@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 export const api = axios.create({
-    baseURL: 'https://localhost:5001/api',
-    headers:{
+    baseURL: 'https://szedarserverapi20200205035200.azurewebsites.net/api',
+    headers: {
         'Content-Type': 'application/json',
     },
 });
@@ -54,6 +54,51 @@ export const tournamentTypes = (type) => {
             break;
         }
         default: {
+        }
+    }
+    return type;
+};
+
+export const gameTypes = (type) => {
+    switch (type) {
+        case 0: {
+            type = '';
+            break;
+        }
+        case 1: {
+            type = 'LeagueOfLegends';
+            break;
+        }
+        case 2: {
+            type = 'Hearthstone';
+            break;
+        }
+        case 3: {
+            type = 'Counter-Strike Global Offensive';
+            break;
+        }
+        case 4: {
+            type = 'Dota 2';
+            break;
+        }
+        case 5: {
+            type = 'Overwatch';
+            break;
+        }
+        case 6: {
+            type = 'Rocket League';
+            break;
+        }
+        case 7: {
+            type = 'Fifa';
+            break;
+        }
+        case 8: {
+            type = 'Other';
+            break;
+        }
+        default: {
+            type = '';
         }
     }
     return type;

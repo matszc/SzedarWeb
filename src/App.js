@@ -11,6 +11,8 @@ import CustomSnackbar from "./components/snacks/snack";
 import {Swiss} from "./views/Swiss/Swiss";
 import {SingleElimination} from "./views/SingleElimination/SingleElimination";
 import {DoubleElimination} from "./views/DoubleElimination/DoubleElimination";
+import Ranking from "./views/Ranking/Ranking";
+import Profile from "./views/Profile/Profile";
 
 class App extends React.Component {
 
@@ -72,6 +74,8 @@ class App extends React.Component {
                                 <Route path='/browse/swiss/:id' component={Swiss}/>
                                 <Route path='/browse/single/:id' component={SingleElimination}/>
                                 <Route path='/browse/double/:id' component={DoubleElimination}/>
+                                <Route path={'/ranking/:id'} component={Ranking}/>
+                                <Route path={'/profile/:id'} component={Profile}/>
                             </Switch>
                         </ResponsiveDrawer>
                         <CustomSnackbar variant={this.state.snack.variant}

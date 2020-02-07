@@ -15,6 +15,9 @@ import {NavLink} from "react-router-dom";
 import AddIcon from '@material-ui/icons/Add';
 import HomeIcon from '@material-ui/icons/Home';
 import ListAltIcon from '@material-ui/icons/ListAlt';
+import PersonIcon from '@material-ui/icons/Person';
+import StorageIcon from '@material-ui/icons/Storage';
+
 
 const drawerWidth = 240;
 
@@ -53,6 +56,7 @@ function ResponsiveDrawer(props) {
     const classes = useStyles();
     const theme = useTheme();
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const user = JSON.parse(localStorage.getItem('user'));
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -81,6 +85,20 @@ function ResponsiveDrawer(props) {
                     <ListItem button key='Browse Tournaments'>
                         <ListItemIcon><ListAltIcon/></ListItemIcon>
                         <ListItemText primary='Browse Tournaments'/>
+                    </ListItem>
+                </NavLink>
+                <Divider/>
+                <NavLink to={user ? `/ranking/${user.id}` : `ranking/`} className={classes.link}>
+                    <ListItem button key={'Ranking'}>
+                        <ListItemIcon><StorageIcon/></ListItemIcon>
+                        <ListItemText primary={'Ranking'}/>
+                    </ListItem>
+                </NavLink>
+                <Divider/>
+                <NavLink to={user ? `/profile/${user.id}` : `profile/`} className={classes.link}>
+                    <ListItem button key={'Profile'}>
+                        <ListItemIcon><PersonIcon/></ListItemIcon>
+                        <ListItemText primary={'Profile'}/>
                     </ListItem>
                 </NavLink>
             </List>

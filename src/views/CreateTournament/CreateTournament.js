@@ -8,18 +8,39 @@ const CreateTournamentComponent = ({history}) => {
 
     const context = React.useContext(AppContext);
 
-    const submitTournament = (tournament) => {
+    const submitTournament = (tournament, open) => {
         const user = JSON.parse(localStorage.getItem('user'));
         if (user === undefined) {
             context.snack.setSnack('warning', 'You need to register first');
             return;
         }
         tournament.Players = tournament.Players.filter(i => i !== '');
-        api.post('/tournament/create', tournament)
-            .then(() => {
+        if (open) {
+
+            if (tournament.Players.length >= tournament.MaxNumberOfPlayers) {
+                context.snack.setSnack('error', 'Maximum number of players excited');
+                return;
+            }
+            if (tournament.StartDate === 'Invalid Date') {
+                return;
+            }
+            const dateNow = new Date();
+            if (tournament.StartDate.getTime() < dateNow.getTime()) {
+                context.snack.setSnack('error', 'Select further date');
+                return;
+            }
+
+            api.post('/tournament/create/open', tournament).then(() => {
                 history.push('../browse');
             })
-            .catch(() => context.snack.setSnack('error', 'Could not create tournament'));
+                .catch(() => context.snack.setSnack('error', 'Could not create tournament'));
+        } else {
+            api.post('/tournament/create', tournament)
+                .then(() => {
+                    history.push('../browse');
+                })
+                .catch(() => context.snack.setSnack('error', 'Could not create tournament'));
+        }
     };
     return (
         <>
