@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 export const api = axios.create({
-    baseURL: 'https://szedarserverapi20200205035200.azurewebsites.net/api',
+    //baseURL: 'https://szedarserverapi20200205035200.azurewebsites.net/api',
+    baseURL: 'https://localhost:5001/api',
     headers: {
         'Content-Type': 'application/json',
     },
