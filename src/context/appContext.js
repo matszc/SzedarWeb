@@ -13,6 +13,13 @@ const AppContext = React.createContext({
         setSnack: () => {
         }
     },
+    lobby: {
+        picks: 0,
+        bans: 0,
+        setLobby: () => {
+
+        }
+    }
 });
 
 export default AppContext;

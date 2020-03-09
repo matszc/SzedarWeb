@@ -32,7 +32,6 @@ class Profile extends React.Component {
 
     loadData = () => {
         api.get(`/user/profile?id=${this.props.match.params.id}`).then(({data}) => {
-            console.log(data);
             this.setState({data: data});
         })
             .catch(() => {
@@ -42,7 +41,6 @@ class Profile extends React.Component {
 
     searchPlayer = () => {
         api.get(`/user/profile?nick=${this.state.playerSearch}`).then(({data}) => {
-            console.log(data);
             this.setState({data: data});
         })
             .catch(() => {
