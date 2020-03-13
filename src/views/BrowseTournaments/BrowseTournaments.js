@@ -75,6 +75,7 @@ class BrowseTournamentsComponent extends React.Component {
 
     rowClick = ({id, type, open}) => {
         if (open) {
+            this.props.history.push(`/browse/tournament/${id}`);
             return;
         }
         switch (type) {
@@ -102,12 +103,25 @@ class BrowseTournamentsComponent extends React.Component {
         });
     };
 
+    deleteClick = ({id}) => {
+        api.delete(`/tournament/deleteOpenTournament/${id}`).then(() => {
+            this.context.snack.setSnack('success', 'Tournament deleted');
+            this.setState(prevState => ({
+                ...prevState,
+                tournamentList: prevState.tournamentList.filter(i => i.id !== id),
+            }))
+        })
+            .catch(() => {
+                this.context.snack.setSnack('error', 'Error during tournament delete');
+            })
+    };
+
     render() {
         return (
             <>
                 <WrapperCard maxWidth={'md'} title={'Browse your tournaments'}>
                     <SzedarTable data={this.state.tournamentList} rowClick={this.rowClick} columns={columns}
-                                 startClick={this.startClick} paginator/>
+                                 startClick={this.startClick} deleteClick={this.deleteClick} paginator/>
                 </WrapperCard>
             </>
         )

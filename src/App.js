@@ -13,6 +13,7 @@ import {SingleElimination} from "./views/SingleElimination/SingleElimination";
 import {DoubleElimination} from "./views/DoubleElimination/DoubleElimination";
 import Ranking from "./views/Ranking/Ranking";
 import Profile from "./views/Profile/Profile";
+import {OpenTournamentDetails} from "./views/OpenDetails/OpenTournamentDetails";
 
 class App extends React.Component {
 
@@ -76,6 +77,7 @@ class App extends React.Component {
                                 <Route path='/browse/double/:id' component={DoubleElimination}/>
                                 <Route path={'/ranking/:id'} component={Ranking}/>
                                 <Route path={'/profile/:id'} component={Profile}/>
+                                <Route path={'/browse/tournament/:id'} component={OpenTournamentDetails}/>
                             </Switch>
                         </ResponsiveDrawer>
                         <CustomSnackbar variant={this.state.snack.variant}
