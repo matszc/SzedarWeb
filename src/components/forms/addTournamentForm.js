@@ -12,12 +12,13 @@ import {KeyboardDatePicker, KeyboardTimePicker, MuiPickersUtilsProvider,} from '
 import AppContext from "../../context/appContext";
 
 
+export const gameTypes = ['League Of Legends', 'Hearthstone', 'Counter-Strike Global Offensive', 'Dota 2', 'Overwatch', 'Rocket League', 'Fifa 20', 'Other'];
+
 export class AddTournamentForm extends React.Component {
 
     static contextType = AppContext;
 
     types = ['DoubleElimination', 'SingleElimination', 'Swiss'];
-    gameTypes = ['League Of Legends', 'Hearthstone', 'Counter-Strike Global Offensive', 'Dota 2', 'Overwatch', 'Rocket League', 'Fifa 20', 'Other'];
 
     constructor(props) {
         super(props);
@@ -217,7 +218,7 @@ export class AddTournamentForm extends React.Component {
                             >
                                 <InputLabel id='gameType'>Game</InputLabel>
                                 <Select labelId='gameType' value={this.state.gameType} onChange={this.handleGameChange}>
-                                    {this.gameTypes.map((i, index) => (
+                                    {gameTypes.map((i, index) => (
                                         <MenuItem key={index} value={index + 1}>{i}</MenuItem>
                                     ))}
                                 </Select>

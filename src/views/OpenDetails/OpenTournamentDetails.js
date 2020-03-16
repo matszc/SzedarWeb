@@ -80,7 +80,6 @@ export class OpenTournamentDetails extends React.Component {
 
     loadData = () => {
         api.get(`/tournament/getOpenTournament/${this.props.match.params.id}`).then(({data}) => {
-            console.log(data);
             this.setState(prevState => {
                 return {
                     ...prevState,
@@ -104,7 +103,7 @@ export class OpenTournamentDetails extends React.Component {
         return (
             <>
                 {!this.state.loading ?
-                    <WrapperCard title={this.state.data.name} maxWidth={'lg'}>
+                    <WrapperCard title={this.state.data.name} maxWidth={'xs'}>
                         <EditTournamentDataForm data={this.state.data} submitFunc={this.editTournament}/>
                         <EditPlayersForm players={this.state.data.players} onEdit={this.editPlayer}
                                          onAdd={this.addPlayer} onDelete={this.deletePlayer}/>
