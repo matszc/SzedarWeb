@@ -21,7 +21,7 @@ const useStyles = makeStyles({
 });
 
 
-const SzedarTable = ({data, rowClick, columns, paginator, startClick}) => {
+const SzedarTable = ({data, rowClick, columns, paginator, startClick, deleteClick}) => {
 
     const classes = useStyles();
     const [page, setPage] = React.useState(0);
@@ -57,7 +57,7 @@ const SzedarTable = ({data, rowClick, columns, paginator, startClick}) => {
                             {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(row => {
                                 return (
                                     <TableRow
-                                        hover={!row.open}
+                                        hover
                                         role={'checkbox'}
                                         tabIndex={-1}
                                         key={row.id}
@@ -74,12 +74,26 @@ const SzedarTable = ({data, rowClick, columns, paginator, startClick}) => {
                                             )
                                         })}
                                         {row.open && startClick ?
-                                            <TableCell>
-                                                <Button variant="contained" color="primary"
-                                                        onClick={() => startClick(row)}>
-                                                    Start
-                                                </Button>
-                                            </TableCell>
+                                            <>
+                                                <TableCell>
+                                                    <Button variant="contained" color="primary"
+                                                            onClick={(e) => {
+                                                                e.stopPropagation();
+                                                                startClick(row)
+                                                            }}>
+                                                        Start
+                                                    </Button>
+                                                </TableCell>
+                                                <TableCell>
+                                                    <Button variant="contained" color="secondary"
+                                                            onClick={(e) => {
+                                                                e.stopPropagation();
+                                                                deleteClick(row)
+                                                            }}>
+                                                        Cancel
+                                                    </Button>
+                                                </TableCell>
+                                            </>
                                             : null}
                                     </TableRow>
                                 )

@@ -88,14 +88,16 @@ function ResponsiveDrawer(props) {
                     </ListItem>
                 </NavLink>
                 <Divider/>
-                <NavLink to={user ? `/ranking/${user.id}` : `ranking/`} className={classes.link}>
+                <NavLink to={user ? `/ranking/${user.id}` : `ranking/`} className={classes.link}
+                         activeClassName={classes.activeLink}>
                     <ListItem button key={'Ranking'}>
                         <ListItemIcon><StorageIcon/></ListItemIcon>
                         <ListItemText primary={'Ranking'}/>
                     </ListItem>
                 </NavLink>
                 <Divider/>
-                <NavLink to={user ? `/profile/${user.id}` : `profile/`} className={classes.link}>
+                <NavLink to={user ? `/profile/${user.id}` : `profile/`} className={classes.link}
+                         activeClassName={classes.activeLink}>
                     <ListItem button key={'Profile'}>
                         <ListItemIcon><PersonIcon/></ListItemIcon>
                         <ListItemText primary={'Profile'}/>
@@ -117,7 +119,6 @@ function ResponsiveDrawer(props) {
             <CssBaseline/>
             <NavBar handleDrawerToggle={handleDrawerToggle}>Szedar Tournament</NavBar>
             <nav className={classes.drawer} aria-label="mailbox folders">
-                The implementation can be swapped with js to avoid SEO duplication of links.
                 <Hidden smUp implementation="css">
                     <Drawer
                         container={container}

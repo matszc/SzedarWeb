@@ -6,9 +6,11 @@ import TextField from "@material-ui/core/TextField";
 import DialogActions from "@material-ui/core/DialogActions";
 import AppContext from "../../../context/appContext";
 import Button from "@material-ui/core/Button";
+import Chat from "../../chat/Chat";
 
 const AddResultDialog = ({open, data, handleClose, handleSubmit}) => {
     const context = useContext(AppContext);
+    const user = JSON.parse(localStorage.getItem('user'));
 
     return (
         <Dialog open={open} onClose={handleClose}>
@@ -38,6 +40,7 @@ const AddResultDialog = ({open, data, handleClose, handleSubmit}) => {
                     </Button>
                 </DialogActions>
             </form>
+            <Chat user={user ? user : {login: 'guest'}} id={data.id}/>
         </Dialog>
 
     );
