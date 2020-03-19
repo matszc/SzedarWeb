@@ -10,6 +10,9 @@ import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
 import {KeyboardDatePicker, KeyboardTimePicker, MuiPickersUtilsProvider,} from '@material-ui/pickers';
 import AppContext from "../../context/appContext";
+import FilledInput from '@material-ui/core/FilledInput';
+import {createLogger} from "@aspnet/signalr/dist/esm/Utils";
+import api from "../../config";
 
 
 export const gameTypes = ['League Of Legends', 'Hearthstone', 'Counter-Strike Global Offensive', 'Dota 2', 'Overwatch', 'Rocket League', 'Fifa 20', 'Other'];
@@ -105,10 +108,6 @@ export class AddTournamentForm extends React.Component {
     }
 
     handleSwissRoundsChange(e) {
-        /*        this.setState(prevState => ({
-                    ...prevState,
-                    swissRounds: parseInt(e.target.value, 10),
-                }));*/
         this.setState({swissRounds: parseInt(e.target.value, 10),})
     }
 
@@ -131,6 +130,17 @@ export class AddTournamentForm extends React.Component {
     handleDateChange(date) {
         this.setState({selectedDate: date});
     }
+
+    uploadFile = (file) => {
+        const data = new FormData();
+        data.append('file', file[0]);
+        api.post('/file/players', data).then(({data}) => {
+            const loadedPlayers = data.split('\n');
+            this.setState({players: this.state.players.concat(loadedPlayers).filter(i => i.length > 0)})
+        }).catch(() => {
+            this.context.snack.setSnack('error', 'Could not read players from file');
+        }); //TODO fix upload second time
+    };
 
     render() {
         return (
@@ -158,7 +168,8 @@ export class AddTournamentForm extends React.Component {
                         </Select>
                     </FormControl>
                     {!this.state.type.length ? null :
-                        this.state.players.map((item, index) => (
+                        <>
+                        { this.state.players.map((item, index) => (
                             <FormControl key={index}
                                          margin={'dense'}>
                                 <InputLabel htmlFor={index.toString()}>Player {index + 1}</InputLabel>
@@ -166,10 +177,23 @@ export class AddTournamentForm extends React.Component {
                                        onChange={(e) => this.handlePlayerChange(e, index)}
                                        id={index.toString()} onKeyUp={(e) => this.addPlayerByEnter(e)}/>
                             </FormControl>
-                        ))}
-                    {!this.state.type.length ? null : (
-                        <Link href='#' className={'margin_10_0'} onClick={this.addPlayer}>Add player</Link>
-                    )}
+
+                            ))}
+                            <input
+                                accept=".txt"
+                                style={{ display: 'none' }}
+                                id="file_upload"
+                                type="file"
+                                onChange={(e) => this.uploadFile(e.target.files)}
+                            />
+                            <label htmlFor="file_upload">
+                                <Button variant="contained" color={'primary'} component="span" style={{margin: '7px'}}>
+                                    import players from .txt file (each player in new line)
+                                </Button>
+                            </label>
+                            <Link href='#' className={'margin_10_0'} onClick={this.addPlayer}>Add player</Link>
+                        </>
+                    }
 
                     {!(this.state.type === 'Swiss' && !this.state.open) ? null : (
                         <FormControl>
