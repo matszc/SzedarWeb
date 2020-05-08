@@ -1,7 +1,7 @@
 import React from "react";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import {ListItemText} from "@material-ui/core";
+import {ListItemText, Select} from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
 import EditIcon from '@material-ui/icons/Edit';
 import FormControl from "@material-ui/core/FormControl";
@@ -12,6 +12,9 @@ import {KeyboardDatePicker, KeyboardTimePicker, MuiPickersUtilsProvider} from "@
 import DateFnsUtils from "@date-io/date-fns";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
+import MenuItem from "@material-ui/core/MenuItem";
+import {gameTypes as gameTypesList} from './addTournamentForm';
+import {gameTypes} from "../../config";
 
 const EditTournamentDataForm = ({data, submitFunc}) => {
 
@@ -20,7 +23,6 @@ const EditTournamentDataForm = ({data, submitFunc}) => {
     const [editProp, setEditProp] = React.useState('');
 
     const updateState = (e, prop) => {
-        console.log(e);
 
         const v = prop === 'startDate' ? e : e.target.value;
         setTournament(prevState => ({
@@ -50,7 +52,8 @@ const EditTournamentDataForm = ({data, submitFunc}) => {
                                 <>
                                     <ListItemText primary={displayProp + ' :  '}/>
                                     <ListItemText
-                                        secondary={i !== 'startDate' ? tournament[i] : moment(tournament[i]).format('DD-MM-YYYY HH:mm')}/>
+                                        secondary={i === 'startDate' ? moment(tournament[i]).format('DD-MM-YYYY HH:mm') :
+                                            i === 'gameType' ? gameTypes(tournament[i]) : tournament[i]}/>
                                     <IconButton onClick={() => setEditProp(i)}>
                                         <EditIcon/>
                                     </IconButton>
@@ -85,17 +88,31 @@ const EditTournamentDataForm = ({data, submitFunc}) => {
                                             </Grid>
                                         </MuiPickersUtilsProvider>
                                     </FormControl>
-                                    :
-                                    <FormControl margin={'dense'}>
-                                        <InputLabel htmlFor={i}>New value
-                                        </InputLabel>
-                                        <Input value={tournament[i]}
-                                               onChange={(e) => updateState(e, i)}
-                                               id={i}
-                                               onBlur={() => submit(i)}
-                                               onKeyUp={(e) => {
-                                                   if (e.key !== 'Enter') return;
-                                                   submit(i)
+                                    : i === 'gameType' ?
+                                        <FormControl required
+                                                     margin={'normal'}
+                                        >
+                                            <InputLabel id='gameType'>Game</InputLabel>
+                                            <Select labelId='gameType' value={tournament.gameType}
+                                                    onChange={(e) => updateState(e, i)}
+                                                    onClose={() => submit(i)}
+                                            >
+                                                {gameTypesList.map((i, index) => (
+                                                    <MenuItem key={index} value={index + 1}>{i}</MenuItem>
+                                                ))}
+                                            </Select>
+                                        </FormControl>
+                                        :
+                                        <FormControl margin={'dense'}>
+                                            <InputLabel htmlFor={i}>New value
+                                            </InputLabel>
+                                            <Input value={tournament[i]}
+                                                   onChange={(e) => updateState(e, i)}
+                                                   id={i}
+                                                   onBlur={() => submit(i)}
+                                                   onKeyUp={(e) => {
+                                                       if (e.key !== 'Enter') return;
+                                                       submit(i)
                                                }}
                                         />
                                     </FormControl>

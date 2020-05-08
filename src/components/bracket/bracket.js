@@ -29,6 +29,7 @@ const Bracket = ({upper, final, lower, gameClick}) => {
                         for (let i = 0; i < round; i++) {
                             baseY += Math.pow(2, i) * 50;
                         }
+
                         const code = parseInt(m.matchCode.slice(1), 10) - 1;
 
                         const baseStep = Math.pow(2, round) * 100;
